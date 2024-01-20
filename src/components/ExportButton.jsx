@@ -1,4 +1,4 @@
-import export_icon from "/src/icons/export.svg";
+import export_icon from "/public/icons/export.svg";
 
 export default function ExportButton() {
   return (

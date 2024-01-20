@@ -2,6 +2,8 @@ import Select from "react-select";
 import AP_list from "../data/AP_list";
 import makeAnimated from "react-select/animated";
 import { useState } from "react";
+import expand_icon from "/icons/expand.svg";
+import collapse_icon from "/icons/collapse.svg";
 
 const customSelect = {
   control: (provided, state) => ({
@@ -60,8 +62,8 @@ export default function Navbar() {
       >
         Pre-College
         <img
-          src={collapse ? "public/arrow.jpg" : "public/arrow.jpg"}
-          className="ml-10 max-w-6"
+          src={collapse ? expand_icon : collapse_icon}
+          className="flex ml-96 w-5 h-5"
         />
       </div>
 

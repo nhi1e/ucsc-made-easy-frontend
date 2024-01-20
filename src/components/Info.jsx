@@ -1,5 +1,4 @@
-import link_icon from "/src/icons/link.svg";
-
+import link_icon from "/public/icons/link.svg";
 export default function Info() {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-md">
