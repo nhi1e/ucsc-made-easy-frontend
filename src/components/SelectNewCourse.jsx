@@ -6,7 +6,35 @@ export default function SelectNewCourse({
   quarter_index,
   courses,
   setCourses,
+  client_id,
 }) {
+  const handleChange = (selectedOption) => {
+    console.log(selectedOption.label);
+    const new_courses = [...courses];
+    new_courses[quarter_index].push(selectedOption.label);
+    console.log(new_courses);
+    setCourses(new_courses);
+
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        client_id: client_id,
+        slot: quarter_index,
+        course: selectedOption.label,
+        ap_courses: [], // UPDATE
+        schedule: courses,
+      }),
+    };
+
+    fetch("http://127.0.0.1:5000/add", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.f);
+      });
+    // backedn add call here
+  };
+
   return (
     <>
       <Select
@@ -17,11 +45,7 @@ export default function SelectNewCourse({
         filterOption={createFilter({ ignoreAccents: false })}
         options={real_courses}
         onChange={(selectedOption) => {
-          console.log(selectedOption.label);
-          const new_courses = [...courses];
-          new_courses[quarter_index].push(selectedOption.label);
-          console.log(new_courses);
-          setCourses(new_courses);
+          handleChange(selectedOption);
         }}
         captureMenuScroll={false}
         components={{

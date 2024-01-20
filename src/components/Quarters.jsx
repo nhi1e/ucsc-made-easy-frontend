@@ -1,7 +1,12 @@
 import { useState } from "react";
 import CourseSelect from "./CourseSelect";
 
-export default function Quarters({ year_index, courses, setCourses }) {
+export default function Quarters({
+  year_index,
+  courses,
+  setCourses,
+  client_id,
+}) {
   const year_names = ["Year 1", "Year 2", "Year 3", "Year 4"];
   const quarter_indices = [0, 1, 2, 3];
 
@@ -35,6 +40,7 @@ export default function Quarters({ year_index, courses, setCourses }) {
                 quarter_index={4 * year_index + q}
                 courses={courses}
                 setCourses={setCourses}
+                client_id={client_id}
               />
             </div>
           ))}

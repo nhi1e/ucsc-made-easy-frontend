@@ -10,6 +10,7 @@ export default function CourseBox({
     new_courses[quarter_index].splice(num, 1);
     console.log(new_courses);
     setCourses(new_courses);
+    // fetch backend here
   };
 
   return (

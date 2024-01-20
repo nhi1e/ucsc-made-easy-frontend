@@ -31,11 +31,33 @@ export default function App() {
     [],
   ]);
 
+  const [satisfied, setSatisfied] = useState([
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [], // for major stuff
+    [], // for ge stuff
+    0, // for credits?
+  ]);
+
   return (
     <>
       <div className="flex">
         <Right />
-        <Left courses={courses} setCourses={setCourses} />
+        <Left courses={courses} setCourses={setCourses} client_id={client_id} />
       </div>
     </>
   );

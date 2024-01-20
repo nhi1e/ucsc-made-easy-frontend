@@ -1,6 +1,6 @@
 import Quarters from "./Quarters";
 
-export default function Years({ courses, setCourses }) {
+export default function Years({ courses, setCourses, client_id }) {
   const year_indices = [0, 1, 2, 3];
 
   return (
@@ -12,6 +12,7 @@ export default function Years({ courses, setCourses }) {
               year_index={year}
               courses={courses}
               setCourses={setCourses}
+              client_id={client_id}
             />
           </div>
         );
