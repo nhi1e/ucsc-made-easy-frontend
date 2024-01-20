@@ -1,11 +1,13 @@
-import { useState } from 'react'
+import Right from "./components/Right"
+import Left from "./components/Left"
 
-function App() {
+export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+    <>
+    <div class="flex">
+    <Left />
+    <Right/>
+    </div>
+    </>
   )
 }
-
-export default App
