@@ -22,8 +22,6 @@ export default function App() {
     [],
   ]);
 
-  console.log(courses);
-
   return (
     <>
       <div className="flex">

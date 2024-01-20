@@ -1,7 +1,7 @@
-import SelectNewCourseNew from "./SelectNewCourseNew";
+import SelectNewCourseNew from "./SelectNewCourse";
 import Years from "./Years";
 
-export default function MainSelect(courses, setCourses) {
+export default function MainSelect({ courses, setCourses }) {
   return (
     <div>
       <Years courses={courses} setCourses={setCourses} />

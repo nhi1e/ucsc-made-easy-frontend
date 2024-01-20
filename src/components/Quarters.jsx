@@ -2,8 +2,6 @@ import { useState } from "react";
 import CourseSelect from "./CourseSelect";
 
 export default function Quarters({ year_index, courses, setCourses }) {
-  console.log("Quarters", courses);
-
   const year_names = ["Year 1", "Year 2", "Year 3", "Year 4"];
   const quarter_indices = [0, 1, 2, 3];
 
