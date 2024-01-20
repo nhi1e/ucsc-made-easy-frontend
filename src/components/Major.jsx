@@ -1,6 +1,16 @@
 import cs_requirements from "/src/data/CS_requirements.js";
+import real_courses from "../data/real_course_list";
+import Select from "react-select";
 
 export default function Major() {
+  const customStyles = {
+    control: (provided) => ({
+      ...provided,
+      width: "200px",
+      length: "100px",
+    }),
+  };
+
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-md">
       <div className="px-6 py-4">
@@ -8,6 +18,13 @@ export default function Major() {
       </div>
 
       <div className="px-6 pt-1 pb-2">
+        <Select
+          className="basic-single"
+          classNamePrefix="select"
+          placeholder="Your major"
+          options={real_courses}
+          styles={customStyles}
+        />
         {cs_requirements.map((course) => (
           <span
             key={course.value}
