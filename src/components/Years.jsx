@@ -1,14 +1,20 @@
 import Quarters from "./Quarters";
 
-export default function Years(courses, setCourses) {
-  const year_names = ["Year 1", "Year 2", "Year 3", "Year 4"];
+export default function Years({ courses, setCourses }) {
+  console.log("YEars", courses.courses);
+
+  const year_indices = [0, 1, 2, 3];
 
   return (
     <div>
-      {year_names.map((year, index) => {
+      {year_indices.map((year) => {
         return (
-          <div key={index}>
-            <Quarters year={year} courses={courses} setCourses={setCourses} />
+          <div key={year}>
+            <Quarters
+              year_index={year}
+              courses={courses.courses}
+              setCourses={courses.setCourses}
+            />
           </div>
         );
       })}
