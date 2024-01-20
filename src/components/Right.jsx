@@ -1,3 +1,3 @@
 export default function Right() {
-    return <div className="flex-grow">Hey im right</div>
+  return <div className="flex-grow">Hey im right</div>;
 }
