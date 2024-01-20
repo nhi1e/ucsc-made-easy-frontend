@@ -1,13 +1,37 @@
 import cs_requirements from "/src/data/CS_requirements.js";
-import real_courses from "../data/real_course_list";
+import years from "../data/years";
+import majors from "../data/Majors_list";
 import Select from "react-select";
 
 export default function Major() {
-  const customStyles = {
-    control: (provided) => ({
+  const customSelect = {
+    control: (provided, state) => ({
       ...provided,
-      width: "200px",
-      length: "100px",
+      background: "#fff",
+      borderColor: "#fff",
+      minHeight: "30px",
+      height: "30px",
+      minWidth: "150px",
+      width: "150px",
+      boxShadow: state.isFocused ? null : null,
+    }),
+
+    valueContainer: (provided, state) => ({
+      ...provided,
+      height: "30px",
+      padding: "0 6px",
+    }),
+
+    input: (provided, state) => ({
+      ...provided,
+      margin: "0px",
+    }),
+    indicatorSeparator: (state) => ({
+      display: "none",
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      height: "30px",
     }),
   };
 
@@ -18,13 +42,23 @@ export default function Major() {
       </div>
 
       <div className="px-6 pt-1 pb-2">
-        <Select
-          className="basic-single"
-          classNamePrefix="select"
-          placeholder="Your major"
-          options={real_courses}
-          styles={customStyles}
-        />
+        <div className="flex pb-2">
+          <Select
+            className="basic-single"
+            classNamePrefix="select"
+            placeholder="Your major"
+            options={majors}
+            styles={customSelect}
+          />
+          <Select
+            className="basic-single"
+            classNamePrefix="select"
+            placeholder="Entry year"
+            options={years}
+            styles={customSelect}
+          />
+        </div>
+
         {cs_requirements.map((course) => (
           <span
             key={course.value}
