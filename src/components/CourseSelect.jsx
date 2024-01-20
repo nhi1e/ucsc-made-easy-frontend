@@ -26,7 +26,7 @@ export default function CourseSelect(quarter) {
   };
 
   return (
-    <div className="w-1/5">
+    <div className="m-1">
       {quarter.quarter}
       {sample_selected.map((selected, index) => (
         <CourseBox key={index} course={selected} />
