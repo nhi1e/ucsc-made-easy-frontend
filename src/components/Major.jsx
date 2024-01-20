@@ -9,10 +9,8 @@ export default function Major() {
       ...provided,
       background: "#fff",
       borderColor: "#fff",
-      minHeight: "30px",
+      maxHeight: "30px",
       height: "30px",
-      minWidth: "150px",
-      width: "150px",
       boxShadow: state.isFocused ? null : null,
     }),
 
@@ -20,6 +18,7 @@ export default function Major() {
       ...provided,
       height: "30px",
       padding: "0 6px",
+      fontSize: "14px",
     }),
 
     input: (provided, state) => ({
@@ -32,6 +31,10 @@ export default function Major() {
     indicatorsContainer: (provided, state) => ({
       ...provided,
       height: "30px",
+    }),
+    menuPortal: (base) => ({
+      ...base,
+      fontSize: "3px",
     }),
   };
 
@@ -47,13 +50,15 @@ export default function Major() {
             className="basic-single"
             classNamePrefix="select"
             placeholder="Your major"
+            defaultValue={majors[20]}
             options={majors}
-            styles={customSelect}
+            styles={{ ...customSelect }}
           />
           <Select
             className="basic-single"
             classNamePrefix="select"
             placeholder="Entry year"
+            defaultValue={years[0]}
             options={years}
             styles={customSelect}
           />

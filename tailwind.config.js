@@ -14,6 +14,9 @@ export default {
       blue: {
         DEFAULT:'#3b82f6'
       },
+      yellow: {
+        DEFAULT: '#F7DB6A'
+      },
     }
   },
   plugins: [],
