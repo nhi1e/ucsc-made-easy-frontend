@@ -34,8 +34,8 @@ export default function App() {
   return (
     <>
       <div className="flex">
-        <Left courses={courses} setCourses={setCourses} />
         <Right />
+        <Left courses={courses} setCourses={setCourses} />
       </div>
     </>
   );
