@@ -1,8 +1,7 @@
 import { useState } from "react";
 import CourseSelect from "./CourseSelect";
 
-export default function Quarters(year) {
-  console.log(year);
+export default function Quarters(year, courses, setCourses) {
   const quarter_names = ["Fall", "Winter", "Spring", "Summer"];
 
   const [collapse, setCollapse] = useState(false);
@@ -26,9 +25,13 @@ export default function Quarters(year) {
       </div>
       <div className="flex ml-5">
         {!collapse &&
-          quarter_names.map((name) => (
-            <div className="max-w-400 border-2 ml-2 mt-1">
-              <CourseSelect quarter={name} />
+          quarter_names.map((name, index) => (
+            <div className="max-w-400 border-2 ml-2 mt-1" key={index}>
+              <CourseSelect
+                quarter={name}
+                courses={courses}
+                setCourses={setCourses}
+              />
             </div>
           ))}
       </div>

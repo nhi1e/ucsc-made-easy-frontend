@@ -59,13 +59,13 @@ export default function SelectNewCourse({
           value={defaultValue}
           onChange={handleChange}
           type="text"
-          className=" border-2 border-gray-500 focus:border-gray-700 outline-none transition"
-          placeholder="Search your query..."
+          className=" border-2 p-1 border-gray-500 focus:border-gray-700 outline-none transition"
+          placeholder="Add a class..."
         />
 
         {/* Search Results Container */}
         {showResults && (
-          <div className="absolute mt-1 w-full p-2 bg-white shadow-lg rounded-bl rounded-br max-h-56 overflow-y-auto">
+          <div className="absolute mt-1 w-full p-2 bg-slate-800 shadow-lg rounded-bl rounded-br max-h-56 overflow-y-auto">
             {results.map((item, index) => {
               return (
                 <div
