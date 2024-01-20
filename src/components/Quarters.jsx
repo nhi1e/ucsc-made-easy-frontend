@@ -16,7 +16,10 @@ export default function Quarters(year, courses, setCourses) {
 
   return (
     <>
-      <div onClick={handleCollapse} className="mt-2 ml-5 border-b-2 flex">
+      <div
+        onClick={handleCollapse}
+        className="mt-2 ml-5 border-b-2 flex hover:bg-gray transition-colors duration-200"
+      >
         {year.year}
         <img
           src={collapse ? "/arrowup.jpg" : "/arrow.jpg"}
@@ -26,7 +29,7 @@ export default function Quarters(year, courses, setCourses) {
       <div className="flex ml-5">
         {!collapse &&
           quarter_names.map((name, index) => (
-            <div className="max-w-400 border-2 ml-2 mt-1" key={index}>
+            <div className="max-w-400 w-60 border-2 ml-2 mt-1" key={index}>
               <CourseSelect
                 quarter={name}
                 courses={courses}

@@ -1,5 +1,6 @@
 import Select, { createFilter } from "react-select";
 import CustomOption from "./CustomOption";
+import real_courses from "../data/real_course_list";
 
 export default function SelectNewCourseNew() {
   return (
@@ -11,11 +12,11 @@ export default function SelectNewCourseNew() {
         isClearable={true}
         //   defaultValue={prev_vals[index]}
         filterOption={createFilter({ ignoreAccents: false })}
-        //   options={courses}
+        options={real_courses}
         //   onChange={(selectedOption) =>
         //     handleChange(
         //       selectedOption,
-        //       `${year} - ${season} - Slot ${selectIndex}`,
+        //       `${year} - ${season} - Slot ${select   Index}`,
         //       year,
         //       season,
         //       selectIndex,
