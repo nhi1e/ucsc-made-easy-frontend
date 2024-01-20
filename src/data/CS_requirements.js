@@ -1,0 +1,27 @@
+const cs_requirements = [
+	{value: 0, label: "CSE 20"},
+	{value: 1, label: "CSE 30"},
+	{value: 2, label: "CSE 12"},
+	{value: 3, label: "CSE 13S"},
+	{value: 4, label: "CSE 16"},
+	{value: 5, label: "ECE 30"},
+	{value: 6, label: "MATH 19A / 20A"},
+	{value: 7, label: "MATH 19B / 20B"},
+	{value: 8, label: "AM 10 / MATH 21"},
+	{value: 9, label: "AM 30 / MATH 23A"},
+	{value: 10, label: "CSE 101"},
+	{value: 11, label: "CSE 101M"},
+	{value: 12, label: "CSE 102"},
+	{value: 13, label: "CSE 103"},
+	{value: 14, label: "CSE 120"},
+	{value: 15, label: "CSE 130"},
+	{value: 16, label: "CSE 112 / 114A"},
+	{value: 17, label: "STAT 131 / CSE 107"},
+	{value: 18, label: "Elective 1"},
+	{value: 19, label: "Elective 2"},
+	{value: 20, label: "Elective 3"},
+	{value: 21, label: "Elective 4"},
+	{value: 22, label: "DC"},
+	{value: 23, label: "Capstone"}
+]
+export default cs_requirements;
