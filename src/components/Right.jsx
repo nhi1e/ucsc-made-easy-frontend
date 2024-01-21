@@ -18,7 +18,7 @@ export default function Right({ satisfied }) {
         <Major satisfied={satisfied} />
         <GE satisfied={satisfied} />
         <Credits satisfied={satisfied} />
-        <div className="flex pl-5 pt-5 pr-5 space-x-4">
+        <div className="flex pl-5 pt-2 pr-5 space-x-4">
           <ExportButton></ExportButton>
           <DarkModeButton></DarkModeButton>
         </div>

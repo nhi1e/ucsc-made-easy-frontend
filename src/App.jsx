@@ -56,7 +56,7 @@ export default function App() {
   const [apCredit, setAPCredit] = useState([]);
 
   return (
-    <>
+    <div className="flex bg-black-dark2 min-h-screen text-white">
       <div className="flex">
         <Right satisfied={satisfied} />
         <Left
@@ -69,6 +69,6 @@ export default function App() {
           setAPCredit={setAPCredit}
         />
       </div>
-    </>
+    </div>
   );
 }

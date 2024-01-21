@@ -43,6 +43,11 @@ export default {
       },
       white: {
         DEFAULT: "#FFFFFF",
+      },
+      black: {
+        DEFAULT: "#000000",
+        dark1: '#212A3E',
+        dark2:'#1A202C'
       }
 
     }

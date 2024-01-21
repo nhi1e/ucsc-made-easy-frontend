@@ -2,11 +2,11 @@ import ge from "/src/data/GE.js";
 
 export default function GE({ satisfied }) {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-md">
+    <div className="bg-black-dark1 max-w-sm mb-4 rounded overflow-hidden shadow-md">
       <div className="px-6 py-4">
-        <div className="font-bold text-ml mb-0.25">GEs</div>
+        <div className="font-bold text-gray-dark text-ml mb-0.25">GEs</div>
       </div>
-      <div className="px-6 pt-1 pb-2">
+      <div className="px-6 pb-2">
         {ge.map((course, index) => (
           <span
             key={course.value}

@@ -1,9 +1,9 @@
 export default function Credits({ satisfied }) {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-md">
+    <div className="bg-black-dark1 max-w-sm rounded overflow-hidden shadow-md">
       <div className="px-6 py-4 ">
         <div className="flex justify-between mb-1">
-          <div className="font-bold text-ml mb-2">Credits</div>
+          <div className="font-bold text-gray-dark text-ml mb-2">Credits</div>
           <span
             className={`text-sm font-medium `}
             // ${colorMode === "dark" ? "text-white" : "text-black"}

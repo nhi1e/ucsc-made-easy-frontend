@@ -1,11 +1,13 @@
 import link_icon from "/public/icons/link.svg";
 export default function Info({ satisfied }) {
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-md">
+    <div className=" bg-black-dark1 mb-4 max-w-sm rounded overflow-hidden shadow-md">
       <div className="px-6 py-4">
-        <div className="font-bold text-ml mb-0.25">Selected Course</div>
+        <div className="font-bold text-gray-dark text-ml mb-0.25">
+          Selected Course
+        </div>
       </div>
-      <div className="px-6 pt-1 pb-2">
+      <div className="px-6  pb-2">
         <p className="text-gray-700 text-sm pb-2">
           Prerequisites: prereq info here
         </p>
