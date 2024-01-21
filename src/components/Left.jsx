@@ -7,10 +7,12 @@ export default function Left({
   client_id,
   satisfied,
   setSatisfied,
+  apCredit,
+  setAPCredit,
 }) {
   return (
     <div className="flex-none w-3/4">
-      <Navbar />
+      <Navbar apCredit={apCredit} setAPCredit={setAPCredit} />
       <MainSelect
         courses={courses}
         setCourses={setCourses}

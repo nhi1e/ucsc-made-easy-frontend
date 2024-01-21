@@ -43,7 +43,7 @@ const customSelect = {
   }),
 };
 
-export default function Navbar() {
+export default function Navbar({ apCredit, setAPCredit }) {
   const animatedComponents = makeAnimated();
 
   const [collapse, setCollapse] = useState(false);
@@ -67,7 +67,7 @@ export default function Navbar() {
             <Select
               className="multi"
               classNamePrefix="select"
-              placeholder="Pre-college credits"
+              placeholder="Select..."
               options={AP_list}
               components={animatedComponents}
               isMulti

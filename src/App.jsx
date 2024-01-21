@@ -53,6 +53,8 @@ export default function App() {
     0, // for credits?
   ]);
 
+  const [apCredit, setAPCredit] = useState([]);
+
   return (
     <>
       <div className="flex">
@@ -63,6 +65,8 @@ export default function App() {
           client_id={client_id}
           satisfied={satisfied}
           setSatisfied={setSatisfied}
+          apCredit={apCredit}
+          setAPCredit={setAPCredit}
         />
       </div>
     </>

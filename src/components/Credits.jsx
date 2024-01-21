@@ -13,7 +13,7 @@ export default function Credits({ satisfied }) {
         </div>
         <div className="w-full rounded-full h-2.5 bg-gray">
           <div
-            className="bg-yellow h-2.5 rounded-full"
+            className="bg-green h-2.5 rounded-full"
             style={{ width: `${Math.min(satisfied[18], 100)}%` }}
           ></div>
         </div>
