@@ -7,8 +7,8 @@ export default function Major({ satisfied }) {
   const customSelect = {
     control: (provided, state) => ({
       ...provided,
-      background: "#4C5464",
-      borderColor: "#4C5464",
+      background: "#ABB1BF",
+      borderColor: "#ABB1BF",
       borderRadius: "20px",
       maxHeight: "30px",
       height: "30px",
@@ -73,7 +73,7 @@ export default function Major({ satisfied }) {
             // bg-green not working
             className={
               satisfied[16][index] !== 1
-                ? "inline-block bg-gray rounded-full px-2 py-1 text-xs font-semibold text-black-dark3 mr-1 mb-1 hover:scale-125"
+                ? "inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-black-dark3 mr-1 mb-1 hover:scale-125"
                 : "inline-block bg-green rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
             }
           >

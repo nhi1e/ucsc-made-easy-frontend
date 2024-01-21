@@ -11,7 +11,7 @@ export default function Credits({ satisfied }) {
             {satisfied[18]} / 180
           </span>
         </div>
-        <div className="w-full rounded-full h-2.5 bg-gray">
+        <div className="w-full rounded-full h-2.5 bg-gray-200">
           <div
             className="bg-green h-2.5 rounded-full"
             style={{ width: `${Math.min(satisfied[18], 100)}%` }}

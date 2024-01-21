@@ -12,9 +12,7 @@ export default {
         dark: '#C8CCD5',
         darker: '#70747B',
         100:'#f2f2f2',
-        200:'#DEE2E7',
-        300:'#D5D9DD',
-        400:'#D0D4D8',
+        200:'#ABB1BF',
       },
       blue: {
         DEFAULT:'#3b82f6',

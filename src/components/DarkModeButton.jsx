@@ -1,4 +1,4 @@
-import moon_icon from "/public/icons/moon.svg";
+import moon_icon from "/icons/moon.svg";
 
 export default function DarkModeButton() {
   return (
