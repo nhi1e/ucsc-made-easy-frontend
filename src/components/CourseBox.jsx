@@ -9,6 +9,7 @@ export default function CourseBox({
   client_id,
   satisfied,
   setSatisfied,
+  apCredit,
 }) {
   const handleRemove = async () => {
     const new_courses = [...courses];
@@ -25,7 +26,7 @@ export default function CourseBox({
         client_id: client_id,
         slot: quarter_index,
         course: deleted_course,
-        ap_courses: [], // UPDATE
+        ap_courses: apCredit, // UPDATE
         schedule: courses,
       }),
     };

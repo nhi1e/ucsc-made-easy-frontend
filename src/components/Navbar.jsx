@@ -43,7 +43,13 @@ const customSelect = {
   }),
 };
 
-export default function Navbar({ apCredit, setAPCredit }) {
+export default function Navbar({
+  apCredit,
+  setAPCredit,
+  client_id,
+  courses,
+  setSatisfied,
+}) {
   const animatedComponents = makeAnimated();
 
   const [collapse, setCollapse] = useState(false);
@@ -70,7 +76,7 @@ export default function Navbar({ apCredit, setAPCredit }) {
         body: JSON.stringify({
           client_id: client_id,
           slot: -1,
-          course: added_item,
+          course: added_item[0],
           ap_courses: apCredit,
           schedule: courses,
         }),
@@ -90,7 +96,7 @@ export default function Navbar({ apCredit, setAPCredit }) {
         body: JSON.stringify({
           client_id: client_id,
           slot: -1,
-          course: removed_item,
+          course: removed_item[0],
           ap_courses: apCredit,
           schedule: courses,
         }),

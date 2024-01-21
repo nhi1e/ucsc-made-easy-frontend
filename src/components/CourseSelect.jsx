@@ -8,6 +8,7 @@ export default function CourseSelect({
   client_id,
   satisfied,
   setSatisfied,
+  apCredit,
 }) {
   const quarter_names = ["Fall", "Winter", "Spring", "Summer"];
 
@@ -26,6 +27,7 @@ export default function CourseSelect({
           client_id={client_id}
           satisfied={satisfied}
           setSatisfied={setSatisfied}
+          apCredit={apCredit}
         />
       ))}
       {/* I want below to change the list I have in this current scope */}
@@ -36,6 +38,7 @@ export default function CourseSelect({
         client_id={client_id}
         satisfied={satisfied}
         setSatisfied={setSatisfied}
+        apCredit={apCredit}
       />
     </div>
   );

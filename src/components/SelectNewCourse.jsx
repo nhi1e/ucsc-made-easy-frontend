@@ -9,6 +9,7 @@ export default function SelectNewCourse({
   client_id,
   satisfied,
   setSatisfied,
+  apCredit,
 }) {
   const handleChange = (selectedOption) => {
     console.log(selectedOption.label);
@@ -24,7 +25,7 @@ export default function SelectNewCourse({
         client_id: client_id,
         slot: quarter_index,
         course: selectedOption.label,
-        ap_courses: [], // UPDATE
+        ap_courses: apCredit, // UPDATE
         schedule: courses,
       }),
     };

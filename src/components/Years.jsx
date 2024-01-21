@@ -6,6 +6,7 @@ export default function Years({
   client_id,
   satisfied,
   setSatisfied,
+  apCredit,
 }) {
   const year_indices = [0, 1, 2, 3];
 
@@ -21,6 +22,7 @@ export default function Years({
               client_id={client_id}
               satisfied={satisfied}
               setSatisfied={setSatisfied}
+              apCredit={apCredit}
             />
           </div>
         );

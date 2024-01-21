@@ -7,6 +7,7 @@ export default function MainSelect({
   client_id,
   satisfied,
   setSatisfied,
+  apCredit,
 }) {
   return (
     <div>
@@ -16,6 +17,7 @@ export default function MainSelect({
         client_id={client_id}
         satisfied={satisfied}
         setSatisfied={setSatisfied}
+        apCredit={apCredit}
       />
     </div>
   );

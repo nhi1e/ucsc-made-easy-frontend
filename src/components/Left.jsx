@@ -12,13 +12,20 @@ export default function Left({
 }) {
   return (
     <div className="flex-none w-3/4">
-      <Navbar apCredit={apCredit} setAPCredit={setAPCredit} />
+      <Navbar
+        apCredit={apCredit}
+        setAPCredit={setAPCredit}
+        client_id={client_id}
+        courses={courses}
+        setSatisfied={setSatisfied}
+      />
       <MainSelect
         courses={courses}
         setCourses={setCourses}
         client_id={client_id}
         satisfied={satisfied}
         setSatisfied={setSatisfied}
+        apCredit={apCredit}
       />
     </div>
   );
