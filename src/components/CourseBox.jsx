@@ -42,8 +42,8 @@ export default function CourseBox({
     <div
       // replace " border-4" with our color
       className={
-        "justify-between border-3 border-gray rounded-lg  p-0.5 m-1 flex bg-gray text-gray-darker" +
-        (satisfied[quarter_index][num] === 0 ? "" : " border-4")
+        "justify-between rounded-lg  p-1 m-1 flex bg-white text-gray-darker border-2 border-red" +
+        (satisfied[quarter_index][num] === 0 ? "" : "")
       }
     >
       {course}

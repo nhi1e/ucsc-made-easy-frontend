@@ -13,6 +13,18 @@ export default function Quarters({
 }) {
   const year_names = ["YEAR 1", "YEAR 2", "YEAR 3", "YEAR 4"];
   const quarter_indices = [0, 1, 2, 3];
+  const boxColors = [
+    "bg-gray-100",
+    "bg-gray-200",
+    "bg-gray-300",
+    "bg-gray-400",
+  ];
+  const boxBorderColors = [
+    "border-orange-dark",
+    "border-blue-dark",
+    "border-yellow-dark",
+    "border-green-dark",
+  ];
 
   const [collapse, setCollapse] = useState(false);
 
@@ -39,7 +51,7 @@ export default function Quarters({
         {!collapse &&
           quarter_indices.map((q) => (
             <div
-              className="px-2 py-2 max-w-400 w-60 border-4 border-gray mt-1 rounded-lg"
+              className={`px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg ${boxBorderColors[q]} ${boxColors[q]}`}
               key={q}
             >
               <CourseSelect

@@ -70,7 +70,7 @@ export default function Major({ satisfied }) {
             // bg-green not working
             className={
               satisfied[16][index] !== 1
-                ? "inline-block bg-gray rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
+                ? "inline-block bg-green-pastel rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
                 : "inline-block bg-green rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
             }
           >
