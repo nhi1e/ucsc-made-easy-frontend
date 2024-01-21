@@ -1,7 +1,7 @@
 import Select, { createFilter } from "react-select";
 import CustomOption from "./CustomOption";
 import real_courses from "../data/real_course_list";
-import { ToastContainer, toast } from "react-toastify";
+import { useToast } from "./ToastContext";
 
 const customSelect = {
   control: (provided, state) => ({
@@ -49,6 +49,8 @@ export default function SelectNewCourse({
   setSatisfied,
   apCredit,
 }) {
+  const { showToast } = useToast();
+
   const handleChange = (selectedOption) => {
     console.log(selectedOption.label);
     const new_courses = [...courses];
@@ -75,15 +77,16 @@ export default function SelectNewCourse({
         setSatisfied(data);
         for (let i = 0; i < data.length - 4; i++) {
           if (data[i].includes(1)) {
-            toast("You have unsatisfied prerequisites", {
-              position: "bottom-center",
-              autoClose: 5000,
-            });
+            // toast("You have unsatisfied prerequisites", {
+            //   position: "bottom-center",
+            //   autoClose: 5000,
+            // });
+            showToast("You have unsatisfied prerequisites");
+
             break;
           }
         }
       });
-    // backedn add call here
   };
 
   return (

@@ -14,12 +14,6 @@ export default function Quarters({
 }) {
   const year_names = ["YEAR 1", "YEAR 2", "YEAR 3", "YEAR 4"];
   const quarter_indices = [0, 1, 2, 3];
-  // const boxColors = [
-  //   "bg-black-dark3",
-  //   "bg-gray-200",
-  //   "bg-gray-300",
-  //   "bg-gray-400",
-  // ];
 
   const [collapse, setCollapse] = useState(false);
 

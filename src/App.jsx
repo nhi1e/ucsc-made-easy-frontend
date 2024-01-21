@@ -2,6 +2,7 @@ import Right from "./components/Right";
 import Left from "./components/Left";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { ToastProvider } from "./components/ToastContext";
 
 let client_id = localStorage.getItem("client_id");
 if (client_id === null) {
@@ -57,19 +58,21 @@ export default function App() {
   const [apCredit, setAPCredit] = useState([]);
 
   return (
-    <div className="flex bg-black-dark2 min-h-screen text-white">
-      <div className="flex">
-        <Right satisfied={satisfied} />
-        <Left
-          courses={courses}
-          setCourses={setCourses}
-          client_id={client_id}
-          satisfied={satisfied}
-          setSatisfied={setSatisfied}
-          apCredit={apCredit}
-          setAPCredit={setAPCredit}
-        />
+    <ToastProvider>
+      <div className="flex bg-black-dark2 min-h-screen text-white">
+        <div className="flex">
+          <Right satisfied={satisfied} />
+          <Left
+            courses={courses}
+            setCourses={setCourses}
+            client_id={client_id}
+            satisfied={satisfied}
+            setSatisfied={setSatisfied}
+            apCredit={apCredit}
+            setAPCredit={setAPCredit}
+          />
+        </div>
       </div>
-    </div>
+    </ToastProvider>
   );
 }

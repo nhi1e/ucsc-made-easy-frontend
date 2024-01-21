@@ -1,7 +1,9 @@
 import MainSelect from "./MainSelect";
 import Navbar from "./Navbar";
+import React, { useEffect } from "react";
+import { useToast } from "./ToastContext";
 import { ToastContainer, toast } from "react-toastify";
-
+import "react-toastify/dist/ReactToastify.css";
 export default function Left({
   courses,
   setCourses,
@@ -11,6 +13,17 @@ export default function Left({
   apCredit,
   setAPCredit,
 }) {
+  const { toastMessage, hideToast } = useToast();
+
+  useEffect(() => {
+    // Display toast when toastMessage changes
+    if (toastMessage) {
+      toast.error(toastMessage);
+      // You can customize the type of toast (info, success, error, etc.)
+      // Check react-toastify documentation for more options
+      hideToast(); // Hide the toast after displaying
+    }
+  }, [toastMessage, hideToast]);
   return (
     <div className="flex-none w-3/4">
       <Navbar
@@ -28,7 +41,20 @@ export default function Left({
         setSatisfied={setSatisfied}
         apCredit={apCredit}
       />
-      <ToastContainer />
+      <ToastContainer
+        position="bottom-center"
+        toastClassName="error"
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition:Bounce
+      />
     </div>
   );
 }
