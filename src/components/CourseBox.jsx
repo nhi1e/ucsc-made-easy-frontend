@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import close_icon from "/icons/close.svg";
 
 export default function CourseBox({
@@ -11,7 +12,7 @@ export default function CourseBox({
   setSatisfied,
   apCredit,
 }) {
-  const handleRemove = async () => {
+  const handleRemove = () => {
     const new_courses = [...courses];
     const deleted_course = new_courses[quarter_index][num];
     console.log(deleted_course);
@@ -31,7 +32,7 @@ export default function CourseBox({
       }),
     };
 
-    await fetch("http://127.0.0.1:5000/remove", requestOptions)
+    fetch("http://127.0.0.1:5000/remove", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         console.log("FRom flask", data);
@@ -39,12 +40,14 @@ export default function CourseBox({
       });
   };
 
+  useEffect(() => {}, [satisfied]);
+
   return (
     <div
       // replace " border-4" with our color
       className={
-        "justify-between rounded-lg  p-1 m-1 flex bg-white text-gray-darker border-2" +
-        (satisfied[quarter_index][num] === 0 ? "" : "border-red")
+        "justify-between rounded-lg  p-1 m-1 flex bg-black-light2 text-gray-400 border-2" +
+        (satisfied[quarter_index][num] === 0 ? "" : " border-red")
       }
     >
       {course}

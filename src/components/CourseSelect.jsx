@@ -11,10 +11,17 @@ export default function CourseSelect({
   apCredit,
 }) {
   const quarter_names = ["Fall", "Winter", "Spring", "Summer"];
-
+  const titleColors = [
+    "text-orange-pastel",
+    "text-blue-pastel",
+    "text-yellow-pastel",
+    "text-green-pastel",
+  ];
   return (
-    <div className="m-1">
-      {quarter_names[quarter_index % 4]}
+    <div className="m-1 ">
+      <div className={`m-1 ${titleColors[quarter_index % 4]}`}>
+        {quarter_names[quarter_index % 4]}
+      </div>
       {/* below should rely on the state list instead, of our quarter index */}
       {courses[quarter_index].map((selected, index) => (
         <CourseBox

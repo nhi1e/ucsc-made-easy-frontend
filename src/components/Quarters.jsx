@@ -20,12 +20,6 @@ export default function Quarters({
   //   "bg-gray-300",
   //   "bg-gray-400",
   // ];
-  // const boxBorderColors = [
-  //   "border-orange-dark",
-  //   "border-blue-dark",
-  //   "border-yellow-dark",
-  //   "border-green-dark",
-  // ];
 
   const [collapse, setCollapse] = useState(false);
 
@@ -38,7 +32,7 @@ export default function Quarters({
   };
 
   return (
-    <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y divide-gray">
+    <div className="mt-6 mr-9 ml-9 grid grid-cols-1 ">
       <div
         onClick={handleCollapse}
         className="mt-2 divide flex hover:bg-black-light2 transition-colors duration-200"

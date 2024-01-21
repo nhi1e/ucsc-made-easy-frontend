@@ -8,8 +8,9 @@ import collapse_icon from "/icons/collapse.svg";
 const customSelect = {
   control: (provided, state) => ({
     ...provided,
-    background: "#fff",
-    borderColor: "#e5e7eb",
+    background: "#4C5464",
+    borderColor: "#4C5464",
+    borderRadius: "30px",
     boxShadow: state.isFocused ? null : null,
   }),
 
@@ -58,7 +59,7 @@ export default function Navbar({
     setCollapse(!collapse);
   };
 
-  const handleChange = async (selectedOptions) => {
+  const handleChange = (selectedOptions) => {
     const selectedLabels = selectedOptions.map((obj) => obj.label);
     const added_item = selectedLabels.filter(
       (value) => !apCredit.includes(value)
@@ -80,12 +81,12 @@ export default function Navbar({
           client_id: client_id,
           slot: -1,
           course: added_item[0],
-          ap_courses: apCredit,
+          ap_courses: selectedLabels,
           schedule: courses,
         }),
       };
 
-      await fetch("http://127.0.0.1:5000/prereqadd", requestOptions)
+      fetch("http://127.0.0.1:5000/prereqadd", requestOptions)
         .then((response) => response.json())
         .then((data) => {
           console.log("FRom flask", data);
@@ -100,12 +101,12 @@ export default function Navbar({
           client_id: client_id,
           slot: -1,
           course: removed_item[0],
-          ap_courses: apCredit,
+          ap_courses: selectedLabels,
           schedule: courses,
         }),
       };
 
-      await fetch("http://127.0.0.1:5000/prereqremove", requestOptions)
+      fetch("http://127.0.0.1:5000/prereqremove", requestOptions)
         .then((response) => response.json())
         .then((data) => {
           console.log("FRom flask", data);
@@ -116,7 +117,7 @@ export default function Navbar({
   };
 
   return (
-    <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y divide-gray">
+    <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y divide-black-light1">
       <div
         onClick={handleCollapse}
         className="mt-2 divide flex hover:bg-black-light2 transition-colors duration-200"

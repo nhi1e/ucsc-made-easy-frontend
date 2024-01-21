@@ -1,6 +1,40 @@
 import Select, { createFilter } from "react-select";
 import CustomOption from "./CustomOption";
 import real_courses from "../data/real_course_list";
+const customSelect = {
+  control: (provided, state) => ({
+    ...provided,
+    background: "#101725",
+    borderColor: "#101725",
+    borderRadius: "20px",
+    maxHeight: "30px",
+    height: "30px",
+    boxShadow: state.isFocused ? null : null,
+  }),
+
+  valueContainer: (provided, state) => ({
+    ...provided,
+    height: "30px",
+    padding: "0 6px",
+    fontSize: "14px",
+  }),
+
+  input: (provided, state) => ({
+    ...provided,
+    margin: "0px",
+  }),
+  indicatorSeparator: (state) => ({
+    display: "none",
+  }),
+  indicatorsContainer: (provided, state) => ({
+    ...provided,
+    height: "30px",
+  }),
+  menuPortal: (base) => ({
+    ...base,
+    fontSize: "3px",
+  }),
+};
 
 export default function SelectNewCourse({
   quarter_index,
@@ -43,6 +77,7 @@ export default function SelectNewCourse({
     <>
       <Select
         classNamePrefix="react-select"
+        placeholder="Add Course"
         key={quarter_index}
         value={""}
         isClearable={true}
@@ -55,6 +90,7 @@ export default function SelectNewCourse({
         components={{
           Option: CustomOption,
         }}
+        styles={customSelect}
       />
     </>
   );

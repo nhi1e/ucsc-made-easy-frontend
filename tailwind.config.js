@@ -18,8 +18,6 @@ export default {
       },
       blue: {
         DEFAULT:'#3b82f6',
-        //pastel:'#C6DEF1',
-        // pastel:'#D7E9F7',
         pastel:'#778DA9',
         dark:'#86A7FC',
       },
