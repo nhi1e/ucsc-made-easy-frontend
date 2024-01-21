@@ -1,5 +1,7 @@
 import { useState } from "react";
 import CourseSelect from "./CourseSelect";
+import expand_icon from "/icons/expand.svg";
+import collapse_icon from "/icons/collapse.svg";
 
 export default function Quarters({
   year_index,
@@ -21,16 +23,13 @@ export default function Quarters({
   };
 
   return (
-    <>
+    <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y divide-gray">
       <div
         onClick={handleCollapse}
-        className="mt-2 ml-5 border-b-2 flex hover:bg-gray transition-colors duration-200"
+        className="mt-2 divide flex hover:bg-gray transition-colors duration-200"
       >
-        {year_names[year_index]}
-        <img
-          src={collapse ? "/arrowup.jpg" : "/arrow.jpg"}
-          className="ml-10 max-w-6"
-        />
+        <span className="mr-auto">{year_names[year_index]}</span>
+        <img src={collapse ? expand_icon : collapse_icon} className="w-5 h-5" />
       </div>
       <div className="flex ml-5">
         {!collapse &&
@@ -45,6 +44,6 @@ export default function Quarters({
             </div>
           ))}
       </div>
-    </>
+    </div>
   );
 }
