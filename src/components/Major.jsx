@@ -7,8 +7,9 @@ export default function Major({ satisfied }) {
   const customSelect = {
     control: (provided, state) => ({
       ...provided,
-      background: "#fff",
-      borderColor: "#fff",
+      background: "#4C5464",
+      borderColor: "#4C5464",
+      borderRadius: "20px",
       maxHeight: "30px",
       height: "30px",
       boxShadow: state.isFocused ? null : null,
@@ -47,7 +48,7 @@ export default function Major({ satisfied }) {
       </div>
 
       <div className="px-6 pb-2">
-        <div className="flex pb-2">
+        <div className="flex justify-between pb-2">
           <Select
             className="basic-single"
             classNamePrefix="select"
@@ -72,7 +73,7 @@ export default function Major({ satisfied }) {
             // bg-green not working
             className={
               satisfied[16][index] !== 1
-                ? "inline-block bg-green-pastel rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
+                ? "inline-block bg-gray rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
                 : "inline-block bg-green rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
             }
           >

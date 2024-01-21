@@ -14,18 +14,18 @@ export default function Quarters({
 }) {
   const year_names = ["YEAR 1", "YEAR 2", "YEAR 3", "YEAR 4"];
   const quarter_indices = [0, 1, 2, 3];
-  const boxColors = [
-    "bg-gray-100",
-    "bg-gray-200",
-    "bg-gray-300",
-    "bg-gray-400",
-  ];
-  const boxBorderColors = [
-    "border-orange-dark",
-    "border-blue-dark",
-    "border-yellow-dark",
-    "border-green-dark",
-  ];
+  // const boxColors = [
+  //   "bg-black-dark3",
+  //   "bg-gray-200",
+  //   "bg-gray-300",
+  //   "bg-gray-400",
+  // ];
+  // const boxBorderColors = [
+  //   "border-orange-dark",
+  //   "border-blue-dark",
+  //   "border-yellow-dark",
+  //   "border-green-dark",
+  // ];
 
   const [collapse, setCollapse] = useState(false);
 
@@ -41,7 +41,7 @@ export default function Quarters({
     <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y divide-gray">
       <div
         onClick={handleCollapse}
-        className="mt-2 divide flex hover:bg-gray transition-colors duration-200"
+        className="mt-2 divide flex hover:bg-black-light2 transition-colors duration-200"
       >
         <span className="mr-auto text-xl text-gray-dark">
           {year_names[year_index]}
@@ -52,7 +52,8 @@ export default function Quarters({
         {!collapse &&
           quarter_indices.map((q) => (
             <div
-              className={`px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg ${boxBorderColors[q]} ${boxColors[q]}`}
+              // className={`px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg ${boxBorderColors[q]} ${boxColors[q]}`}
+              className="px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg bg-black-dark3 "
               key={q}
             >
               <CourseSelect

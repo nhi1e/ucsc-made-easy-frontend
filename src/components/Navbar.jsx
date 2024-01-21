@@ -8,8 +8,9 @@ import collapse_icon from "/icons/collapse.svg";
 const customSelect = {
   control: (provided, state) => ({
     ...provided,
-    background: "#fff",
-    borderColor: "#e5e7eb",
+    background: "#4C5464",
+    borderColor: "#4C5464",
+    borderRadius: "30px",
     boxShadow: state.isFocused ? null : null,
   }),
 
@@ -115,9 +116,9 @@ export default function Navbar({
     <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y divide-gray">
       <div
         onClick={handleCollapse}
-        className="mt-2 divide flex hover:bg-gray transition-colors duration-200"
+        className="mt-2 divide flex hover:bg-black-light2 transition-colors duration-200"
       >
-        <span className="mr-auto">Pre-College</span>
+        <span className="mr-auto text-gray-dark">PRE-COLLEGE</span>
         <img src={collapse ? expand_icon : collapse_icon} className="w-5 h-5" />
       </div>
       <div>

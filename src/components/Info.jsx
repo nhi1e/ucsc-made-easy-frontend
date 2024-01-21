@@ -8,11 +8,11 @@ export default function Info({ satisfied }) {
         </div>
       </div>
       <div className="px-6  pb-2">
-        <p className="text-gray-700 text-sm pb-2">
+        <p className="text-gray-700 text-gray-dark text-sm pb-2">
           Prerequisites: prereq info here
         </p>
         <div className="bg-gray-light justify-end py-2 rounded-2xl flex items-center">
-          <div className="className=text-white bg-gray hover:bg-gray-dark font-medium rounded-xl text-xs px-2 py-1 focus:outline-none">
+          <div className="className=text-white bg-gray-dark hover:bg-gray font-medium rounded-xl text-xs px-2 py-1 focus:outline-none">
             <a
               href="https://catalog.ucsc.edu/en/current/general-catalog/academic-units/baskin-engineering/computer-science-and-engineering/computer-science-bs/"
               target="_blank"

@@ -46,8 +46,11 @@ export default {
       },
       black: {
         DEFAULT: "#000000",
+        light1:'#4C5464',
+        light2:'#2D374C',
         dark1: '#212A3E',
-        dark2:'#1A202C'
+        dark2:'#1A202C',
+        dark3:'#101725',
       }
 
     }
