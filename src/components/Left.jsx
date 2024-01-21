@@ -1,5 +1,6 @@
 import MainSelect from "./MainSelect";
 import Navbar from "./Navbar";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Left({
   courses,
@@ -27,6 +28,7 @@ export default function Left({
         setSatisfied={setSatisfied}
         apCredit={apCredit}
       />
+      <ToastContainer />
     </div>
   );
 }

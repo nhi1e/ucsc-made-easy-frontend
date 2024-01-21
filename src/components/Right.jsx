@@ -4,6 +4,7 @@ import GE from "./GE.jsx";
 import Credits from "./Credits.jsx";
 import ExportButton from "./ExportButton.jsx";
 import DarkModeButton from "./DarkModeButton.jsx";
+import NoteButton from "./NoteButton.jsx";
 
 export default function Right({ satisfied }) {
   return (
@@ -18,7 +19,8 @@ export default function Right({ satisfied }) {
         <Major satisfied={satisfied} />
         <GE satisfied={satisfied} />
         <Credits satisfied={satisfied} />
-        <div className="flex pl-5 pt-2 pr-5 space-x-4">
+        <div className="flex pl-5 pt-2 pr-5 space-x-4 justify-center">
+          <NoteButton></NoteButton>
           <ExportButton></ExportButton>
           <DarkModeButton></DarkModeButton>
         </div>

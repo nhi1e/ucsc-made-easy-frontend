@@ -1,6 +1,8 @@
 import Select, { createFilter } from "react-select";
 import CustomOption from "./CustomOption";
 import real_courses from "../data/real_course_list";
+import { ToastContainer, toast } from "react-toastify";
+
 const customSelect = {
   control: (provided, state) => ({
     ...provided,
@@ -17,11 +19,13 @@ const customSelect = {
     height: "30px",
     padding: "0 6px",
     fontSize: "14px",
+    color: "#ffffff",
   }),
 
   input: (provided, state) => ({
     ...provided,
     margin: "0px",
+    color: "ffffff",
   }),
   indicatorSeparator: (state) => ({
     display: "none",
@@ -69,6 +73,14 @@ export default function SelectNewCourse({
       .then((data) => {
         console.log("FRom flask", data);
         setSatisfied(data);
+        satisfied.forEach((quarter) => {
+          if (quarter.includes(1)) {
+            toast("Notification: New version available", {
+              position: "bottom-center",
+              autoClose: 5000, // Optional: Adjust the auto-close duration in milliseconds
+            });
+          }
+        });
       });
     // backedn add call here
   };

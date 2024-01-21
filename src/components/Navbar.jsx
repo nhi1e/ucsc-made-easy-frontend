@@ -24,7 +24,7 @@ const customSelect = {
   multiValue: (provided, state) => ({
     ...provided,
     borderRadius: "14px", // Set your desired border radius for chips
-    backgroundColor: "#e5e7eb",
+    backgroundColor: "#ABB1BF",
   }),
 
   input: (provided, state) => ({

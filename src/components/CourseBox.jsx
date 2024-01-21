@@ -46,11 +46,11 @@ export default function CourseBox({
     <div
       // replace " border-4" with our color
       className={
-        "justify-between rounded-lg  p-1 m-1 flex bg-black-light2 text-gray-400 border-2" +
-        (satisfied[quarter_index][num] === 0 ? "" : " border-red")
+        "justify-between rounded-lg  p-1 m-1 flex bg-black-light2 text-gray-400 " +
+        (satisfied[quarter_index][num] === 0 ? "" : "border-2 border-red")
       }
     >
-      {course}
+      <div className="text-gray">{course}</div>
       <button onClick={handleRemove} className="ml-5">
         <img src={close_icon} className="w-5 h-5" />
       </button>

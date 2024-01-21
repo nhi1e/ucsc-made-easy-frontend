@@ -2,8 +2,8 @@ import moon_icon from "/icons/moon.svg";
 
 export default function DarkModeButton() {
   return (
-    <div className="bg-gray-light py-2 rounded-xl flex items-center">
-      <div className="className=text-white bg-gray hover:bg-gray-dark font-medium rounded-2xl text-xs px-2 py-1 focus:outline-none">
+    <div className=" py-2 rounded-xl flex items-center">
+      <div className="className=text-white bg-black-dark3 hover:bg-black-dark1 font-medium rounded-2xl text-xs px-2 py-1 focus:outline-none">
         <a
           href=""
           target="_blank"

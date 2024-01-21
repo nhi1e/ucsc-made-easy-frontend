@@ -20,6 +20,7 @@ export default function Major({ satisfied }) {
       height: "30px",
       padding: "0 6px",
       fontSize: "14px",
+      fontWeight: "bold",
     }),
 
     input: (provided, state) => ({
