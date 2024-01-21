@@ -51,7 +51,7 @@ export default function App() {
     [], // for major stuff
     [], // for ge stuff
     0, // for credits?
-    ["Course Info Here", "Prerequisite Info Here", ""], // for course info 19
+    ["Course Info Here", "Info Here", ""], // for course info 19
   ]);
 
   const [apCredit, setAPCredit] = useState([]);
