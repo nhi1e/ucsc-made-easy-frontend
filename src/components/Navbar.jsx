@@ -52,20 +52,56 @@ export default function Navbar({ apCredit, setAPCredit }) {
     setCollapse(!collapse);
   };
 
-  const handleChange = (selectedOptions) => {
+  const handleChange = async (selectedOptions) => {
     console.log(
       "Selected Options:",
       selectedOptions.map((obj) => obj.label)
     );
     const compare = [...apCredit];
     setAPCredit(selectedOptions.map((obj) => obj.label));
-    const dif1 = compare.filter((value) => !apCredit.includes(value));
-    const dif2 = apCredit.filter((value) => !compare.includes(value));
+    const removed_item = compare.filter((value) => !apCredit.includes(value)); // removed item
+    const added_item = apCredit.filter((value) => !compare.includes(value));
     if (apCredit.length > compare) {
       // added
       // fetch for added ap prereq
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          client_id: client_id,
+          slot: -1,
+          course: added_item,
+          ap_courses: apCredit,
+          schedule: courses,
+        }),
+      };
+
+      await fetch("http://127.0.0.1:5000/prereqadd", requestOptions)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("FRom flask", data);
+          setSatisfied(data);
+        });
     } else {
       // fetch for removed prereq
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          client_id: client_id,
+          slot: -1,
+          course: removed_item,
+          ap_courses: apCredit,
+          schedule: courses,
+        }),
+      };
+
+      await fetch("http://127.0.0.1:5000/prereqremove", requestOptions)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("FRom flask", data);
+          setSatisfied(data);
+        });
     }
   };
 
