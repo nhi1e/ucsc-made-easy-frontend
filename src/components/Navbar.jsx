@@ -4,6 +4,7 @@ import makeAnimated from "react-select/animated";
 import { useState } from "react";
 import expand_icon from "/icons/expand.svg";
 import collapse_icon from "/icons/collapse.svg";
+import { useToast } from "./ToastContext";
 
 const customSelect = {
   control: (provided, state) => ({
@@ -51,6 +52,8 @@ export default function Navbar({
   courses,
   setSatisfied,
 }) {
+  const { showToast } = useToast();
+
   const animatedComponents = makeAnimated();
 
   const [collapse, setCollapse] = useState(false);
@@ -91,6 +94,16 @@ export default function Navbar({
         .then((data) => {
           console.log("FRom flask", data);
           setSatisfied(data);
+          for (let i = 0; i < data.length - 4; i++) {
+            if (data[i].includes(1)) {
+              // toast("You have unsatisfied prerequisites", {
+              //   position: "bottom-center",
+              //   autoClose: 5000,
+              // });
+              showToast("You have unsatisfied prerequisites");
+              break;
+            }
+          }
         });
     } else {
       // fetch for removed prereq
@@ -111,6 +124,16 @@ export default function Navbar({
         .then((data) => {
           console.log("FRom flask", data);
           setSatisfied(data);
+          for (let i = 0; i < data.length - 4; i++) {
+            if (data[i].includes(1)) {
+              // toast("You have unsatisfied prerequisites", {
+              //   position: "bottom-center",
+              //   autoClose: 5000,
+              // });
+              showToast("You have unsatisfied prerequisites");
+              break;
+            }
+          }
         });
     }
     setAPCredit(selectedLabels);

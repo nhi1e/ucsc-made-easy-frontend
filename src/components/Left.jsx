@@ -44,7 +44,7 @@ export default function Left({
       <ToastContainer
         position="bottom-center"
         toastClassName="error"
-        autoClose={5000}
+        autoClose={2700}
         hideProgressBar
         newestOnTop={false}
         closeOnClick

@@ -82,7 +82,6 @@ export default function SelectNewCourse({
             //   autoClose: 5000,
             // });
             showToast("You have unsatisfied prerequisites");
-
             break;
           }
         }

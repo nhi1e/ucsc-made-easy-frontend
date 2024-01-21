@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import close_icon from "/icons/close.svg";
+import { useToast } from "./ToastContext";
 
 export default function CourseBox({
   num,
@@ -12,6 +13,8 @@ export default function CourseBox({
   setSatisfied,
   apCredit,
 }) {
+  const { showToast } = useToast();
+
   const handleRemove = () => {
     const new_courses = [...courses];
     const deleted_course = new_courses[quarter_index][num];
