@@ -33,10 +33,10 @@ export default function Quarters({
         <span className="mr-auto">{year_names[year_index]}</span>
         <img src={collapse ? expand_icon : collapse_icon} className="w-5 h-5" />
       </div>
-      <div className="flex ml-5">
+      <div className="flex justify-between">
         {!collapse &&
           quarter_indices.map((q) => (
-            <div className="max-w-400 w-60 border-2 ml-2 mt-1" key={q}>
+            <div className="max-w-400 w-60 border-2 mt-1" key={q}>
               <CourseSelect
                 quarter_index={4 * year_index + q}
                 courses={courses}

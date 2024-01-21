@@ -6,7 +6,41 @@ import expand_icon from "/icons/expand.svg";
 import collapse_icon from "/icons/collapse.svg";
 
 const customSelect = {
-  // ... your styles
+  control: (provided, state) => ({
+    ...provided,
+    background: "#fff",
+    borderColor: "#e5e7eb",
+    boxShadow: state.isFocused ? null : null,
+  }),
+
+  valueContainer: (provided, state) => ({
+    ...provided,
+    height: "30px",
+    padding: "0 6px",
+    fontSize: "14px",
+  }),
+
+  multiValue: (provided, state) => ({
+    ...provided,
+    borderRadius: "14px", // Set your desired border radius for chips
+    backgroundColor: "#e5e7eb",
+  }),
+
+  input: (provided, state) => ({
+    ...provided,
+    margin: "0px",
+  }),
+  indicatorSeparator: (state) => ({
+    display: "none",
+  }),
+  indicatorsContainer: (provided, state) => ({
+    ...provided,
+    height: "30px",
+  }),
+  menuPortal: (base) => ({
+    ...base,
+    fontSize: "3px",
+  }),
 };
 
 export default function Navbar() {
@@ -19,7 +53,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y ">
+    <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y divide-gray">
       <div
         onClick={handleCollapse}
         className="mt-2 divide flex hover:bg-gray transition-colors duration-200"
@@ -29,7 +63,7 @@ export default function Navbar() {
       </div>
       <div>
         {!collapse && (
-          <div className="px-6 py-4">
+          <div className="mt-3 pb-2">
             <Select
               className="multi"
               classNamePrefix="select"
@@ -38,6 +72,7 @@ export default function Navbar() {
               components={animatedComponents}
               isMulti
               closeMenuOnSelect={false}
+              styles={customSelect}
             />
           </div>
         )}
