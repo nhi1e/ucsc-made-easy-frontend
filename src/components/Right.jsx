@@ -5,7 +5,7 @@ import Credits from "./Credits.jsx";
 import ExportButton from "./ExportButton.jsx";
 import DarkModeButton from "./DarkModeButton.jsx";
 
-export default function Right() {
+export default function Right({ satisfied }) {
   return (
     <div className="flex-grow flex flex-col justify-between">
       <div>
@@ -14,10 +14,10 @@ export default function Right() {
           <span className="text-yellow">cs</span>
           <span className="text-blue">c, made easy</span>
         </h1>
-        <Info></Info>
-        <Major></Major>
-        <GE></GE>
-        <Credits></Credits>
+        <Info satisfied={satisfied} />
+        <Major satisfied={satisfied} />
+        <GE satisfied={satisfied} />
+        <Credits satisfied={satisfied} />
         <div className="flex pl-5 pt-5 pr-5 space-x-4">
           <ExportButton></ExportButton>
           <DarkModeButton></DarkModeButton>

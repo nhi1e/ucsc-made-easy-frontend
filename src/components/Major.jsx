@@ -3,7 +3,7 @@ import years from "../data/years";
 import majors from "../data/Majors_list";
 import Select from "react-select";
 
-export default function Major() {
+export default function Major({ satisfied }) {
   const customSelect = {
     control: (provided, state) => ({
       ...provided,
@@ -64,15 +64,15 @@ export default function Major() {
           />
         </div>
 
-        {cs_requirements.map((course) => (
+        {cs_requirements.map((course, index) => (
           <span
             key={course.value}
-            className="inline-block bg-gray rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
-            // className={
-            //   sharedState[course.value + 48] !== 1
-            //     ? "inline-block bg-gray rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
-            //     : "inline-block bg-green rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
-            // }
+            // bg-green not working
+            className={
+              satisfied[16][index] !== 1
+                ? "inline-block bg-gray rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
+                : "inline-block bg-yellow rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
+            }
           >
             {course.label}
           </span>

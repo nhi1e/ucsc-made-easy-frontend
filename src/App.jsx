@@ -56,7 +56,7 @@ export default function App() {
   return (
     <>
       <div className="flex">
-        <Right />
+        <Right satisfied={satisfied} />
         <Left
           courses={courses}
           setCourses={setCourses}

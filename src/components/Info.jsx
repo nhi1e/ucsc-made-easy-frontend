@@ -1,5 +1,5 @@
 import link_icon from "/public/icons/link.svg";
-export default function Info() {
+export default function Info({ satisfied }) {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-md">
       <div className="px-6 py-4">
