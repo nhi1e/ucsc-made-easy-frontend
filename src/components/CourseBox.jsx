@@ -40,15 +40,39 @@ export default function CourseBox({
       });
   };
 
+  // not sure if this is necessary
   useEffect(() => {}, [satisfied]);
+
+  const fetchCourseInfo = () => {
+    // new route to fetch new course info
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        client_id: client_id,
+        course: course,
+        ap_courses: apCredit,
+        schedule: courses,
+      }),
+    };
+
+    fetch("http://127.0.0.1:5000/getinfo", requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("FRom flask", data);
+        setSatisfied(data);
+      });
+    console.log("Clicked div");
+  };
 
   return (
     <div
       // replace " border-4" with our color
       className={
-        "justify-between rounded-lg  p-1 m-1 flex bg-black-light2 text-gray-400 " +
-        (satisfied[quarter_index][num] === 0 ? "" : "border-2 border-red")
+        "justify-between rounded-lg  p-1 m-1 flex bg-black-light2 text-gray-400 hover:bg-black-light1 hover:cursor-pointer transition-colors " +
+        (satisfied[quarter_index][num] === 1 ? "border-2 border-red" : "")
       }
+      onClick={fetchCourseInfo}
     >
       <div className="text-gray">{course}</div>
       <button onClick={handleRemove} className="ml-5">
