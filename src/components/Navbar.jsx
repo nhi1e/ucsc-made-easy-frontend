@@ -8,9 +8,8 @@ import collapse_icon from "/icons/collapse.svg";
 const customSelect = {
   control: (provided, state) => ({
     ...provided,
-    background: "#4C5464",
-    borderColor: "#4C5464",
-    borderRadius: "30px",
+    background: "#fff",
+    borderColor: "#e5e7eb",
     boxShadow: state.isFocused ? null : null,
   }),
 
@@ -60,15 +59,18 @@ export default function Navbar({
   };
 
   const handleChange = async (selectedOptions) => {
-    console.log(
-      "Selected Options:",
-      selectedOptions.map((obj) => obj.label)
+    const selectedLabels = selectedOptions.map((obj) => obj.label);
+    const added_item = selectedLabels.filter(
+      (value) => !apCredit.includes(value)
+    ); // removed item
+    const removed_item = apCredit.filter(
+      (value) => !selectedLabels.includes(value)
     );
-    const compare = [...apCredit];
-    setAPCredit(selectedOptions.map((obj) => obj.label));
-    const removed_item = compare.filter((value) => !apCredit.includes(value)); // removed item
-    const added_item = apCredit.filter((value) => !compare.includes(value));
-    if (apCredit.length > compare) {
+    // console.log("Ap credit: ", apCredit);
+    // console.log("Selected options: ", selectedLabels);
+    // console.log("Added item?: ", added_item[0]);
+    // console.log("Removed item?: ", removed_item[0]);
+    if (apCredit.length < selectedLabels.length) {
       // added
       // fetch for added ap prereq
       const requestOptions = {
@@ -110,6 +112,7 @@ export default function Navbar({
           setSatisfied(data);
         });
     }
+    setAPCredit(selectedLabels);
   };
 
   return (
