@@ -1,3 +1,5 @@
+import close_icon from "/icons/close.svg";
+
 export default function CourseBox({
   num,
   course,
@@ -40,13 +42,13 @@ export default function CourseBox({
     <div
       // replace " border-4" with our color
       className={
-        "border-3 border-gray rounded-lg  p-0.5 m-1 flex bg-gray" +
+        "justify-between border-3 border-gray rounded-lg  p-0.5 m-1 flex bg-gray text-gray-darker" +
         (satisfied[quarter_index][num] === 0 ? "" : " border-4")
       }
     >
       {course}
       <button onClick={handleRemove} className="ml-5">
-        Remove
+        <img src={close_icon} className="w-5 h-5" />
       </button>
     </div>
   );
