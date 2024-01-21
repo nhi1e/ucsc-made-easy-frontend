@@ -17,6 +17,12 @@ export default {
       yellow: {
         DEFAULT: '#F7DB6A'
       },
+      green: {
+        DEFAULT: '#bbf7d0',
+      },
+      red: {
+        DEFAULT: '#F17A7A',
+      },
     }
   },
   plugins: [],

@@ -40,7 +40,7 @@ export default function CourseBox({
     <div
       // replace " border-4" with our color
       className={
-        "border-2 border-green-500 p-0.5 m-1 flex" +
+        "border-3 border-gray rounded-lg  p-0.5 m-1 flex bg-gray" +
         (satisfied[quarter_index][num] === 0 ? "" : " border-4")
       }
     >
