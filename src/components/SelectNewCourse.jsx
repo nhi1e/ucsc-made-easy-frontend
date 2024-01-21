@@ -73,15 +73,15 @@ export default function SelectNewCourse({
       .then((data) => {
         console.log("FRom flask", data);
         setSatisfied(data);
-        satisfied.forEach((quarter) => {
-          console.log(typeof quarter);
-          if (quarter.includes(1)) {
-            toast("Notification: New version available", {
+        for (let i = 0; i < data.length - 4; i++) {
+          if (data[i].includes(1)) {
+            toast("You have unsatisfied prerequisites", {
               position: "bottom-center",
-              autoClose: 5000, // Optional: Adjust the auto-close duration in milliseconds
+              autoClose: 5000,
             });
+            break;
           }
-        });
+        }
       });
     // backedn add call here
   };
