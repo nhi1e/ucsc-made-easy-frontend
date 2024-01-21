@@ -14,7 +14,7 @@ export default function Info({ satisfied }) {
           Prerequisites: {satisfied[19][1]}
         </p>
         <div className="bg-gray-light justify-end py-2 rounded-2xl flex items-center">
-          <div className="className=text-white bg-gray-200 hover:bg-gray font-medium rounded-xl text-xs px-2 py-1 focus:outline-none">
+          <div className=" bg-gray-200 hover:bg-gray font-medium rounded-xl text-xs px-2 py-1 focus:outline-none">
             <a
               href={satisfied[19][2]}
               target={satisfied[19][2] === "" ? "_self" : "_blank"}

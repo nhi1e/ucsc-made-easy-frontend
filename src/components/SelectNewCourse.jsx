@@ -74,6 +74,7 @@ export default function SelectNewCourse({
         console.log("FRom flask", data);
         setSatisfied(data);
         satisfied.forEach((quarter) => {
+          console.log(typeof quarter);
           if (quarter.includes(1)) {
             toast("Notification: New version available", {
               position: "bottom-center",
