@@ -7,6 +7,8 @@ export default function SelectNewCourse({
   courses,
   setCourses,
   client_id,
+  satisfied,
+  setSatisfied,
 }) {
   const handleChange = (selectedOption) => {
     console.log(selectedOption.label);
@@ -30,7 +32,7 @@ export default function SelectNewCourse({
     fetch("http://127.0.0.1:5000/add", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data.f);
+        console.log(data);
       });
     // backedn add call here
   };

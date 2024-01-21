@@ -8,6 +8,8 @@ export default function Quarters({
   courses,
   setCourses,
   client_id,
+  satisfied,
+  setSatisfied,
 }) {
   const year_names = ["Year 1", "Year 2", "Year 3", "Year 4"];
   const quarter_indices = [0, 1, 2, 3];
@@ -40,6 +42,8 @@ export default function Quarters({
                 courses={courses}
                 setCourses={setCourses}
                 client_id={client_id}
+                satisfied={satisfied}
+                setSatisfied={setSatisfied}
               />
             </div>
           ))}

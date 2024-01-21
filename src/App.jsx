@@ -57,7 +57,13 @@ export default function App() {
     <>
       <div className="flex">
         <Right />
-        <Left courses={courses} setCourses={setCourses} client_id={client_id} />
+        <Left
+          courses={courses}
+          setCourses={setCourses}
+          client_id={client_id}
+          satisfied={satisfied}
+          setSatisfied={setSatisfied}
+        />
       </div>
     </>
   );

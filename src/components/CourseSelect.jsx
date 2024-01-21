@@ -1,4 +1,3 @@
-import { useState } from "react";
 import CourseBox from "./CourseBox";
 import SelectNewCourse from "./SelectNewCourse";
 
@@ -7,10 +6,10 @@ export default function CourseSelect({
   courses,
   setCourses,
   client_id,
+  satisfied,
+  setSatisfied,
 }) {
   const quarter_names = ["Fall", "Winter", "Spring", "Summer"];
-
-  console.log(quarter_index, courses[quarter_index], "HERE");
 
   return (
     <div className="m-1">
@@ -24,6 +23,9 @@ export default function CourseSelect({
           quarter_index={quarter_index}
           courses={courses}
           setCourses={setCourses}
+          client_id={client_id}
+          satisfied={satisfied}
+          setSatisfied={setSatisfied}
         />
       ))}
       {/* I want below to change the list I have in this current scope */}
@@ -32,6 +34,8 @@ export default function CourseSelect({
         courses={courses}
         setCourses={setCourses}
         client_id={client_id}
+        satisfied={satisfied}
+        setSatisfied={setSatisfied}
       />
     </div>
   );
