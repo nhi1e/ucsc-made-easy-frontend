@@ -19,7 +19,7 @@ export default function Major({ satisfied }) {
       ...provided,
       height: "30px",
       padding: "0 6px",
-      fontSize: "14px",
+      fontSize: "13px",
       fontWeight: "bold",
     }),
 

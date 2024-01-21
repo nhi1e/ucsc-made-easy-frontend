@@ -35,9 +35,9 @@ export default function Quarters({
     <div className="mt-6 mr-9 ml-9 grid grid-cols-1 ">
       <div
         onClick={handleCollapse}
-        className="mt-2 divide flex hover:bg-black-light2 transition-colors duration-200"
+        className="mt-0.8 divide flex hover:bg-black-light2 transition-colors duration-200"
       >
-        <span className="mr-auto text-xl text-gray-dark">
+        <span className="mr-auto text-xl mb-1 text-gray-dark">
           {year_names[year_index]}
         </span>
         <img src={collapse ? expand_icon : collapse_icon} className="w-5 h-5" />

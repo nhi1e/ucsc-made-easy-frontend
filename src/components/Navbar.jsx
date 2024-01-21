@@ -8,8 +8,8 @@ import collapse_icon from "/icons/collapse.svg";
 const customSelect = {
   control: (provided, state) => ({
     ...provided,
-    background: "#4C5464",
-    borderColor: "#4C5464",
+    background: "#212A3E",
+    borderColor: "#212A3E",
     borderRadius: "30px",
     boxShadow: state.isFocused ? null : null,
   }),
