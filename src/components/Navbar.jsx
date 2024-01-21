@@ -52,6 +52,23 @@ export default function Navbar({ apCredit, setAPCredit }) {
     setCollapse(!collapse);
   };
 
+  const handleChange = (selectedOptions) => {
+    console.log(
+      "Selected Options:",
+      selectedOptions.map((obj) => obj.label)
+    );
+    const compare = [...apCredit];
+    setAPCredit(selectedOptions.map((obj) => obj.label));
+    const dif1 = compare.filter((value) => !apCredit.includes(value));
+    const dif2 = apCredit.filter((value) => !compare.includes(value));
+    if (apCredit.length > compare) {
+      // added
+      // fetch for added ap prereq
+    } else {
+      // fetch for removed prereq
+    }
+  };
+
   return (
     <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y divide-gray">
       <div
@@ -69,6 +86,7 @@ export default function Navbar({ apCredit, setAPCredit }) {
               classNamePrefix="select"
               placeholder="Select..."
               options={AP_list}
+              onChange={handleChange}
               components={animatedComponents}
               isMulti
               closeMenuOnSelect={false}
