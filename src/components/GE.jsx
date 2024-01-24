@@ -2,7 +2,7 @@ import ge from "/src/data/GE.js";
 
 export default function GE({ satisfied }) {
   return (
-    <div className="bg-black-dark1 max-w-sm mb-4 rounded overflow-hidden shadow-md">
+    <div className="bg-black-dark3 max-w-sm mb-4 rounded-lg overflow-hidden shadow-md">
       <div className="px-6 py-4">
         <div className="font-bold text-gray-dark text-ml mb-0.25">GEs</div>
       </div>

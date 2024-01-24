@@ -3,7 +3,7 @@ export default function Info({ satisfied }) {
   // to conditionally make the link work
 
   return (
-    <div className=" bg-black-dark1 mb-4 max-w-sm rounded overflow-hidden shadow-md">
+    <div className=" bg-black-dark3 mb-4 max-w-sm rounded-lg overflow-hidden shadow-md">
       <div className="px-6 py-4">
         <div className="font-bold text-gray-dark text-ml mb-0.25">
           {satisfied[19][0]}
