@@ -19,13 +19,12 @@ const customSelect = {
     height: "30px",
     padding: "0 6px",
     fontSize: "14px",
-    color: "#ffffff",
   }),
 
   input: (provided, state) => ({
     ...provided,
     margin: "0px",
-    color: "ffffff",
+    color: "#f2f2f2", //when typing
   }),
   indicatorSeparator: (state) => ({
     display: "none",
