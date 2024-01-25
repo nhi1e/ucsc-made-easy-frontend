@@ -64,7 +64,7 @@ export default function SelectNewCourse({
         client_id: client_id,
         slot: quarter_index,
         course: selectedOption.label,
-        ap_courses: apCredit, // UPDATE
+        ap_courses: apCredit.map((val) => val.label), // UPDATE
         schedule: courses,
       }),
     };

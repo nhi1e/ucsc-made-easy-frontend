@@ -73,18 +73,14 @@ export default function Navbar({
   };
 
   const handleChange = (selectedOptions) => {
-    const selectedLabels = selectedOptions.map((obj) => obj.label);
-    const added_item = selectedLabels.filter(
+    const added_item = selectedOptions.filter(
       (value) => !apCredit.includes(value)
     ); // removed item
     const removed_item = apCredit.filter(
-      (value) => !selectedLabels.includes(value)
+      (value) => !selectedOptions.includes(value)
     );
-    // console.log("Ap credit: ", apCredit);
-    // console.log("Selected options: ", selectedLabels);
-    // console.log("Added item?: ", added_item[0]);
-    // console.log("Removed item?: ", removed_item[0]);
-    if (apCredit.length < selectedLabels.length) {
+    // NEED TO PROCESS APS IN HTTP REQUEST PROPERLY
+    if (apCredit.length < selectedOptions.length) {
       // added
       // fetch for added ap prereq
       const requestOptions = {
@@ -93,8 +89,8 @@ export default function Navbar({
         body: JSON.stringify({
           client_id: client_id,
           slot: -1,
-          course: added_item[0],
-          ap_courses: selectedLabels,
+          course: added_item[0].label,
+          ap_courses: selectedOptions.map((val) => val.label),
           schedule: courses,
         }),
       };
@@ -123,8 +119,8 @@ export default function Navbar({
         body: JSON.stringify({
           client_id: client_id,
           slot: -1,
-          course: removed_item[0],
-          ap_courses: selectedLabels,
+          course: removed_item[0].label,
+          ap_courses: selectedOptions.map((val) => val.label),
           schedule: courses,
         }),
       };
@@ -146,7 +142,7 @@ export default function Navbar({
           }
         });
     }
-    setAPCredit(selectedLabels);
+    setAPCredit(selectedOptions);
   };
 
   return (
@@ -172,6 +168,7 @@ export default function Navbar({
               isMulti
               closeMenuOnSelect={false}
               styles={customSelect}
+              defaultValue={apCredit} // default value is an array like [ {value: 5, label: "Ap calc"}, ... ]
             />
           </div>
         )}

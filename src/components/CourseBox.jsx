@@ -30,7 +30,7 @@ export default function CourseBox({
         client_id: client_id,
         slot: quarter_index,
         course: deleted_course,
-        ap_courses: apCredit, // UPDATE
+        ap_courses: apCredit.map((val) => val.label), // UPDATE
         schedule: courses,
       }),
     };
@@ -52,9 +52,8 @@ export default function CourseBox({
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        client_id: client_id,
         course: course,
-        ap_courses: apCredit,
+        ap_courses: apCredit.map((val) => val.label),
         schedule: courses,
       }),
     };
