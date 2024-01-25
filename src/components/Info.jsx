@@ -14,11 +14,11 @@ export default function Info({ satisfied }) {
           Prerequisites: {satisfied[19][1]}
         </p>
         <div className="bg-gray-light justify-end py-2 rounded-2xl flex items-center">
-          <div className=" bg-gray-200 hover:bg-gray font-medium rounded-xl text-xs px-2 py-1 focus:outline-none">
+          <div className=" bg-black-light1 hover:bg-black-light2 font-medium rounded-xl text-xs px-2 py-1 focus:outline-none">
             <a
               href={satisfied[19][2]}
               target={satisfied[19][2] === "" ? "_self" : "_blank"}
-              className="font-medium text-xs px-0 py-0.5 focus:outline-none mr-2 flex items-center" // Combined styles for link and flex container
+              className="font-medium text-xs text-black-dark3 px-0 py-0.5 focus:outline-none mr-2 flex items-center" // Combined styles for link and flex container
             >
               <img
                 src={link_icon}

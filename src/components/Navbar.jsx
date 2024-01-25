@@ -32,6 +32,10 @@ const customSelect = {
     ...provided,
     color: "#f2f2f2", //whats shown in the box
   }),
+  multiValueRemove: (provided) => ({
+    ...provided,
+    color: "#ffffff", //FIXME
+  }),
 
   input: (provided, state) => ({
     ...provided,
