@@ -12,7 +12,8 @@ export default function GE({ satisfied }) {
             key={course.value}
             className={
               satisfied[17][index] !== 1
-                ? "inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
+                ? // ? "inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
+                  "inline-block bg-black-light1 rounded-full px-2 py-1 text-xs font-semibold text-black-dark2 mr-1 mb-1 hover:scale-125"
                 : "inline-block bg-green rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
             }
           >

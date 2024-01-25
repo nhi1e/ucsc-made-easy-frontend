@@ -7,12 +7,22 @@ export default function Major({ satisfied }) {
   const customSelect = {
     control: (provided, state) => ({
       ...provided,
-      background: "#ABB1BF",
-      borderColor: "#ABB1BF",
+      background: "#4C5464",
+      borderColor: "#4C5464",
       borderRadius: "20px",
-      maxHeight: "30px",
-      height: "30px",
+      maxHeight: "10px",
+      height: "10px",
       boxShadow: state.isFocused ? null : null,
+    }),
+
+    // dropdownIndicator: (base) => ({
+    //   ...base,
+    //   borderColor: "#1A202C",
+    // }),
+
+    singleValue: (base) => ({
+      ...base,
+      color: "#1A202C", //whats shown in the box
     }),
 
     valueContainer: (provided, state) => ({
@@ -26,6 +36,8 @@ export default function Major({ satisfied }) {
     input: (provided, state) => ({
       ...provided,
       margin: "0px",
+      color: "#1A202C", //when typing
+      // width: "80px",
     }),
     indicatorSeparator: (state) => ({
       display: "none",
@@ -37,6 +49,12 @@ export default function Major({ satisfied }) {
     menuPortal: (base) => ({
       ...base,
       fontSize: "3px",
+    }),
+    option: (provided) => ({
+      //the dropdown
+      ...provided,
+      background: "#4C5464",
+      color: "#ABB1BF",
     }),
   };
 
@@ -74,8 +92,10 @@ export default function Major({ satisfied }) {
             // bg-green not working
             className={
               satisfied[16][index] !== 1
-                ? "inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-black-dark3 mr-1 mb-1 hover:scale-125"
-                : "inline-block bg-green rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
+                ? "inline-block bg-black-light1 rounded-full px-2 py-1 text-xs font-semibold text-black-dark2 mr-1 mb-1 hover:scale-125"
+                : // ? "inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-black-dark3 mr-1 mb-1 hover:scale-125"
+
+                  "inline-block bg-green rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
             }
           >
             {course.label}

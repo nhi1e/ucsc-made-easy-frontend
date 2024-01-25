@@ -55,6 +55,7 @@ export default function Left({
         theme="colored"
         transition:Bounce
       />
+      <div className="py-20"></div>
     </div>
   );
 }

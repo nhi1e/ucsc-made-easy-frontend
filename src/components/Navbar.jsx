@@ -9,8 +9,8 @@ import { useToast } from "./ToastContext";
 const customSelect = {
   control: (provided, state) => ({
     ...provided,
-    background: "#212A3E",
-    borderColor: "#212A3E",
+    background: "#101725",
+    borderColor: "#101725",
     borderRadius: "30px",
     boxShadow: state.isFocused ? null : null,
   }),
@@ -20,17 +20,23 @@ const customSelect = {
     height: "30px",
     padding: "0 6px",
     fontSize: "14px",
+    // fontWeight: "bold",
   }),
 
-  multiValue: (provided, state) => ({
+  multiValue: (provided) => ({
     ...provided,
     borderRadius: "14px", // Set your desired border radius for chips
-    backgroundColor: "#ABB1BF",
+    backgroundColor: "#2D374C",
+  }),
+  multiValueLabel: (provided) => ({
+    ...provided,
+    color: "#f2f2f2", //whats shown in the box
   }),
 
   input: (provided, state) => ({
     ...provided,
     margin: "0px",
+    color: "#f2f2f2", //when typing
   }),
   indicatorSeparator: (state) => ({
     display: "none",
@@ -140,12 +146,13 @@ export default function Navbar({
   };
 
   return (
-    <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y divide-black-light1">
+    // <div className="mt-6 mr-9 ml-9 grid grid-cols-1 divide-y divide-black-light1">
+    <div className="mt-6 mr-9 ml-9 grid grid-cols-1 ">
       <div
         onClick={handleCollapse}
         className="mt-2 divide flex hover:bg-black-light2 transition-colors duration-200"
       >
-        <span className="mr-auto text-gray-dark">PRE-COLLEGE</span>
+        <span className="mr-auto text-gray-dark text-xl mb-1">PRE-COLLEGE</span>
         <img src={collapse ? expand_icon : collapse_icon} className="w-5 h-5" />
       </div>
       <div>
