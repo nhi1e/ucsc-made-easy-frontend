@@ -8,7 +8,7 @@ import NoteButton from "./NoteButton.jsx";
 
 export default function Right({ satisfied }) {
   return (
-    <div className="flex-grow flex flex-col justify-between">
+    <div className="flex-grow flex flex-col justify-between overflow-y-scroll select-none">
       <div>
         <h1 className="text-3xl font-bold mt-4 pb-4 ml-6 flex-shrink-0">
           <span className="text-blue">u</span>

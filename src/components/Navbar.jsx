@@ -11,7 +11,7 @@ const customSelect = {
     ...provided,
     background: "#101725",
     borderColor: "#101725",
-    borderRadius: "30px",
+    borderRadius: "7px",
     boxShadow: state.isFocused ? null : null,
   }),
 

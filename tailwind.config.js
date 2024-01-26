@@ -27,6 +27,7 @@ export default {
         pastel:'#D2E3C8',
       },
       red: {
+        DEFAULT: '#EF6262',
         pastel:'#F2C6DE',
       },
       orange: {
