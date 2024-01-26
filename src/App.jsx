@@ -71,7 +71,6 @@ if (client_id === null) {
 
 export default function App() {
   const [courses, setCourses] = useState(courses_format);
-
   const [satisfied, setSatisfied] = useState(satisfied_format);
 
   // Example of how apCredit should look
@@ -84,7 +83,7 @@ export default function App() {
     <ToastProvider>
       <div className="flex bg-black-dark2 min-h-screen text-white">
         <div className="flex">
-          <Right satisfied={satisfied} />
+          <Right satisfied={satisfied} courses={courses} apCredit={apCredit} />
           <Left
             courses={courses}
             setCourses={setCourses}
