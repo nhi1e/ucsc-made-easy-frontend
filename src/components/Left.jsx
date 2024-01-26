@@ -25,7 +25,7 @@ export default function Left({
     }
   }, [toastMessage, hideToast]);
   return (
-    <div className="flex-none w-3/4 overflow-y-scroll select-none">
+    <div className="flex-none w-3/4 overflow-y-scroll">
       <Navbar
         apCredit={apCredit}
         setAPCredit={setAPCredit}

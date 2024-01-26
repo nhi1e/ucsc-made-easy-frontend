@@ -81,7 +81,7 @@ export default function App() {
 
   return (
     <ToastProvider>
-      <div className="flex bg-black-dark2 min-h-screen text-white">
+      <div className="w-full bg-black-dark2 min-h-screen text-white ">
         <div className="flex">
           <Right satisfied={satisfied} courses={courses} apCredit={apCredit} />
           <Left
