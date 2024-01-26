@@ -83,10 +83,7 @@ export default function ExportButton({ satisfied, courses, apCredit }) {
       }
       x = x + 55;
     }
-    doc.text("Fall", 60, y);
-    doc.text("Winter", 115, y);
-    doc.text("Spring", 170, y);
-    doc.text("Summer", 225, y);
+    doc.text("Credits: " + satisfied[18].toString(), 273, 208);
 
     doc.save("4 Year Plan.pdf");
   };
