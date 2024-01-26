@@ -36,26 +36,57 @@ export default function ExportButton({ satisfied, courses, apCredit }) {
     doc.line(55, 0, 55, 210);
 
     doc.setTextColor(0, 0, 0);
-    doc.text("Prior Credits", 60, 5);
-    y = 10;
-    let x = 60;
-    for (let i = 0; i < apCredit.length; i++) {
-      if (i % 2 == 0) {
-        doc.setTextColor(89, 98, 124);
-      } else {
-        doc.setTextColor(124, 114, 89);
+    y = 0;
+    if (apCredit.length > 0) {
+      doc.text("Prior Credits", 60, 5);
+      y = 10;
+      let x = 60;
+      for (let i = 0; i < apCredit.length; i++) {
+        if (i % 2 == 0) {
+          doc.setTextColor(89, 98, 124);
+        } else {
+          doc.setTextColor(124, 114, 89);
+        }
+        if (x + doc.getStringUnitWidth(apCredit[i].label) * 4.3 > 297) {
+          x = 60;
+          y = y + 5;
+          doc.text(apCredit[i].label, x, y);
+          x = x + doc.getStringUnitWidth(apCredit[i].label) * 4.6;
+        } else {
+          doc.text(apCredit[i].label, x, y);
+          x = x + doc.getStringUnitWidth(apCredit[i].label) * 4.6;
+        }
       }
-      if (x + doc.getStringUnitWidth(apCredit[i].label) * 4.3 > 297) {
-        x = 60;
-        y = y + 5;
-        doc.text(apCredit[i].label, x, y);
-        x = x + doc.getStringUnitWidth(apCredit[i].label) * 4.6;
-      } else {
-        doc.text(apCredit[i].label, x, y);
-        x = x + doc.getStringUnitWidth(apCredit[i].label) * 4.6;
-      }
+      y = y + 5;
+      doc.line(55, y, 297, y);
     }
-    doc.line(55, y + 5, 297, y + 5);
+    doc.line(113, y, 113, y + 200);
+    doc.line(168, y, 168, y + 200);
+    doc.line(222, y, 222, y + 200);
+    doc.setTextColor(0, 0, 0);
+
+    y = y + 7;
+    const quarters = ["Fall", "Winter", "Spring", "Summer"];
+    let x = 60;
+    for (let i = 0; i < 16; i++) {
+      if (i != 0 && i % 4 == 0) {
+        x = 60;
+        y = y + 40;
+        doc.line(55, y, 300, y);
+        y = y + 4;
+      }
+      doc.text(quarters[i % 4], x, y);
+      let local_y = y + 7;
+      for (let j = 0; j < courses[i].length; j++) {
+        doc.text(courses[i][j], x, local_y);
+        local_y = local_y + 5;
+      }
+      x = x + 55;
+    }
+    doc.text("Fall", 60, y);
+    doc.text("Winter", 115, y);
+    doc.text("Spring", 170, y);
+    doc.text("Summer", 225, y);
 
     doc.save("4 Year Plan.pdf");
   };
