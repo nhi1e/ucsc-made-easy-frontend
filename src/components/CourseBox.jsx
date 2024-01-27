@@ -38,7 +38,6 @@ export default function CourseBox({
     fetch("http://127.0.0.1:5000/remove", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        console.log("FRom flask", data);
         setSatisfied(data);
       });
   };

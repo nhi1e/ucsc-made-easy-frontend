@@ -72,7 +72,6 @@ export default function SelectNewCourse({
     fetch("http://127.0.0.1:5000/add", requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        console.log("FRom flask", data);
         setSatisfied(data);
         for (let i = 0; i < data.length - 4; i++) {
           if (data[i].includes(1)) {
