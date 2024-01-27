@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import note_icon from "/icons/note.svg";
 
-export default function NoteButton() {
+export default function NoteButton({ colorMode }) {
   const [showInput, setShowInput] = useState(false);
 
   const handleButtonClick = () => {

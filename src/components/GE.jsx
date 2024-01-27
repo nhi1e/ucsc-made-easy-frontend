@@ -1,6 +1,6 @@
 import ge from "/src/data/GE.js";
 
-export default function GE({ satisfied }) {
+export default function GE({ satisfied, colorMode }) {
   return (
     <div className="bg-black-dark3 max-w-sm mb-4 rounded-lg overflow-hidden shadow-md">
       <div className="px-6 py-4">

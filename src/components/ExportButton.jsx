@@ -3,7 +3,12 @@ import { jsPDF, AcroFormTextField } from "jspdf";
 import cs_requirements from "../data/CS_requirements.js";
 import ge from "../data/GE.js";
 
-export default function ExportButton({ satisfied, courses, apCredit }) {
+export default function ExportButton({
+  satisfied,
+  courses,
+  apCredit,
+  colorMode,
+}) {
   const generatePDF = () => {
     const doc = new jsPDF({ orientation: "landscape" });
     doc.setFontSize(8);

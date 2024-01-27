@@ -80,7 +80,7 @@ export default function App() {
     <ToastProvider>
       <div
         className={
-          "w-full min-h-screen text-white select-none " +
+          "transition-all duration-300 w-full min-h-screen text-white select-none " +
           (colorMode ? "bg-black-dark2" : "bg-white")
         }
       >

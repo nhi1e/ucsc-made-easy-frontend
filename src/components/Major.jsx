@@ -3,7 +3,7 @@ import years from "../data/years";
 import majors from "../data/Majors_list";
 import Select from "react-select";
 
-export default function Major({ satisfied }) {
+export default function Major({ satisfied, colorMode }) {
   const customSelect = {
     control: (provided, state) => ({
       ...provided,

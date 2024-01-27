@@ -21,16 +21,17 @@ export default function Right({
           <span className="text-yellow">cs</span>
           <span className="text-blue">c, made easy</span>
         </h1>
-        <Info satisfied={satisfied} />
-        <Major satisfied={satisfied} />
-        <GE satisfied={satisfied} />
-        <Credits satisfied={satisfied} />
+        <Info satisfied={satisfied} colorMode={colorMode} />
+        <Major satisfied={satisfied} colorMode={colorMode} />
+        <GE satisfied={satisfied} colorMode={colorMode} />
+        <Credits satisfied={satisfied} colorMode={colorMode} />
         <div className="flex pl-5 pt-2 pr-5 space-x-4 justify-center">
-          <NoteButton />
+          <NoteButton colorMode={colorMode} />
           <ExportButton
             satisfied={satisfied}
             apCredit={apCredit}
             courses={courses}
+            colorMode={colorMode}
           />
           <DarkModeButton colorMode={colorMode} setColorMode={setColorMode} />
         </div>

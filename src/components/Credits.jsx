@@ -1,4 +1,4 @@
-export default function Credits({ satisfied }) {
+export default function Credits({ satisfied, colorMode }) {
   return (
     <div className="bg-black-dark3 max-w-sm rounded-lg overflow-hidden shadow-md">
       <div className="px-6 py-4 ">

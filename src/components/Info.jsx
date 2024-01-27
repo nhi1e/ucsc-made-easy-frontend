@@ -1,5 +1,5 @@
 import link_icon from "/icons/link.svg";
-export default function Info({ satisfied }) {
+export default function Info({ satisfied, colorMode }) {
   // to conditionally make the link work
 
   return (
