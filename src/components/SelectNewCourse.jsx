@@ -54,7 +54,6 @@ export default function SelectNewCourse({
     console.log(selectedOption.label);
     const new_courses = [...courses];
     new_courses[quarter_index].push(selectedOption.label);
-    console.log(new_courses);
     setCourses(new_courses);
 
     const requestOptions = {
