@@ -35,6 +35,8 @@ export default {
       },
       white: {
         DEFAULT: "#FFFFFF",
+        dark1: "#DDDDDD", // temporary
+        dark2: "#BBBBBB",
       },
       black: {
         DEFAULT: "#000000",
