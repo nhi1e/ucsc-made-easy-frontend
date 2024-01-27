@@ -62,7 +62,6 @@ if (client_id === null) {
   await fetch("http://127.0.0.1:5000/", requestOptions)
     .then((response) => response.json())
     .then((data) => {
-      console.log("FRom flask", data);
       courses_format = data.schedule;
       satisfied_format = data.prereq;
       ap_format = data.ap_courses;
