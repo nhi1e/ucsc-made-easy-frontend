@@ -1,14 +1,37 @@
 import export_icon from "/icons/export.svg";
-import { jsPDF } from "jspdf";
+import { jsPDF, AcroFormTextField } from "jspdf";
 import cs_requirements from "../data/CS_requirements.js";
 import ge from "../data/GE.js";
 
 export default function ExportButton({ satisfied, courses, apCredit }) {
   const generatePDF = () => {
     const doc = new jsPDF({ orientation: "landscape" });
+    doc.setFontSize(8);
+    doc.text("Email: ", 4, 4);
+    doc.text("Student ID: ", 4, 9);
+    doc.setFillColor(236, 236, 235);
+
+    doc.rect(13, 0, 40, 5, "F");
+    var textField = new AcroFormTextField();
+    textField.Rect = [13, 0, 40, 5];
+    textField.multiline = false;
+    textField.fontSize = 11;
+    textField.maxFontSize = 11;
+    textField.fieldName = "EmailBox";
+    doc.addField(textField);
+
+    doc.rect(19, 6, 33, 5, "F");
+    var emailField = new AcroFormTextField();
+    emailField.Rect = [19, 6, 33, 5];
+    emailField.multiline = false;
+    emailField.fontSize = 11;
+    emailField.maxFontSize = 11;
+    emailField.fieldName = "IDBox";
+    doc.addField(emailField);
+
     doc.setFontSize(11);
-    doc.text("Major Requirements", 5, 5); // can update to be variable major in the future
-    let y = 10;
+    doc.text("Major Requirements", 5, 15); // can update to be variable major in the future
+    let y = 20;
     for (let i = 0; i < cs_requirements.length; i++) {
       if (satisfied[16][i] == 1) {
         doc.setTextColor(60, 195, 81);
