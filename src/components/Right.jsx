@@ -6,7 +6,13 @@ import ExportButton from "./ExportButton.jsx";
 import DarkModeButton from "./DarkModeButton.jsx";
 import NoteButton from "./NoteButton.jsx";
 
-export default function Right({ satisfied, courses, apCredit }) {
+export default function Right({
+  satisfied,
+  courses,
+  apCredit,
+  colorMode,
+  setColorMode,
+}) {
   return (
     <div className="flex-grow flex flex-col justify-between overflow-y-scroll select-none">
       <div>
@@ -26,7 +32,7 @@ export default function Right({ satisfied, courses, apCredit }) {
             apCredit={apCredit}
             courses={courses}
           />
-          <DarkModeButton />
+          <DarkModeButton colorMode={colorMode} setColorMode={setColorMode} />
         </div>
       </div>
     </div>

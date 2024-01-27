@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import moon_icon from "/icons/moon.svg";
 
-export default function DarkModeButton() {
+export default function DarkModeButton({ colorMode, setColorMode }) {
+  const handleClick = () => {
+    if (colorMode === true) {
+      setColorMode(false);
+    } else {
+      setColorMode(true);
+    }
+  };
+
   return (
-    <div className="py-2 rounded-xl flex items-center">
+    <div onClick={handleClick} className="py-2 rounded-xl flex items-center">
       <div className="bg-black-dark3 hover:bg-black-dark1 rounded-2xl text-xs px-2 py-1 focus:outline-none">
         <a
           className="rounded-2xl font-medium text-xs px-0 p-2 focus:outline-none flex items-center" // Combined styles for link and flex container

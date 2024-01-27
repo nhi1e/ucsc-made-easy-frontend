@@ -72,18 +72,26 @@ if (client_id === null) {
 export default function App() {
   const [courses, setCourses] = useState(courses_format);
   const [satisfied, setSatisfied] = useState(satisfied_format);
-
-  // Example of how apCredit should look
-  // const [apCredit, setAPCredit] = useState([
-  //   { value: 7, label: "AP Art Studio Drawing with score 3, 4" },
-  // ]);
   const [apCredit, setAPCredit] = useState(ap_format);
+  const [colorMode, setColorMode] = useState(true); // true is dark, false is light
+  // see below in the first div how to render different styles depending on the mode
 
   return (
     <ToastProvider>
-      <div className="w-full bg-black-dark2 min-h-screen text-white select-none">
+      <div
+        className={
+          "w-full min-h-screen text-white select-none " +
+          (colorMode ? "bg-black-dark2" : "bg-white")
+        }
+      >
         <div className="flex">
-          <Right satisfied={satisfied} courses={courses} apCredit={apCredit} />
+          <Right
+            satisfied={satisfied}
+            courses={courses}
+            apCredit={apCredit}
+            colorMode={colorMode}
+            setColorMode={setColorMode}
+          />
           <Left
             courses={courses}
             setCourses={setCourses}
