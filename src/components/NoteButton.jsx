@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import note_icon from "/icons/note.svg";
-
+import note_dark from "/icons/note-dark.svg";
+import note_light from "/icons/note-light.svg";
 export default function NoteButton({ colorMode }) {
   const [showInput, setShowInput] = useState(false);
 
@@ -12,6 +12,7 @@ export default function NoteButton({ colorMode }) {
     // Add logic here to save changes, you can use state or other mechanisms
     setShowInput(false);
   };
+  const iconSource = colorMode ? note_dark : note_light;
 
   return (
     <div className="py-2 rounded-xl flex items-center">
@@ -36,13 +37,20 @@ export default function NoteButton({ colorMode }) {
           </button>
         </div>
       ) : (
-        <div className="bg-black-dark3 text-white hover:bg-black-dark1 font-medium rounded-2xl text-xs px-2 py-1 focus:outline-none">
+        <div
+          className={
+            "font-medium rounded-2xl text-xs px-2 py-1 focus:outline-none " +
+            (colorMode
+              ? "bg-black-dark3 hover:bg-black-dark1 text-white"
+              : "bg-gray-100  hover:bg-gray text-black-dark3")
+          }
+        >
           <a
             className="rounded-2xl font-medium text-xs px-0 p-2 focus:outline-none mr-2 flex items-center"
             onClick={handleButtonClick}
           >
             <img
-              src={note_icon}
+              src={iconSource}
               alt="linkw"
               style={{
                 width: "15px",

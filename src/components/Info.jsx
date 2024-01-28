@@ -34,7 +34,7 @@ export default function Info({ satisfied, colorMode }) {
               "transition-all duration-300 font-medium rounded-xl text-xs px-2 py-1 focus:outline-none " +
               (colorMode
                 ? "bg-black-light1 hover:bg-black-light2"
-                : "bg-gray-200 hover:bg-gray-dark")
+                : "bg-gray hover:bg-gray-dark")
             }
           >
             <a

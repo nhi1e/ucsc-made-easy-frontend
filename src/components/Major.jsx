@@ -7,8 +7,8 @@ export default function Major({ satisfied, colorMode }) {
   const customSelect = {
     control: (provided, state) => ({
       ...provided,
-      background: "#4C5464",
-      borderColor: "#4C5464",
+      background: "#e5e7eb",
+      borderColor: "#e5e7eb",
       borderRadius: "20px",
       maxHeight: "10px",
       height: "10px",
@@ -50,12 +50,12 @@ export default function Major({ satisfied, colorMode }) {
       ...base,
       fontSize: "3px",
     }),
-    option: (provided) => ({
-      //the dropdown
-      ...provided,
-      background: "#4C5464",
-      color: "#ABB1BF",
-    }),
+    // option: (provided) => ({
+    //   //the dropdown
+    //   ...provided,
+    //   background: "#4C5464",
+    //   color: "#ABB1BF",
+    // }),
   };
 
   return (
@@ -100,12 +100,22 @@ export default function Major({ satisfied, colorMode }) {
           <span
             key={course.value}
             // bg-green not working
-            className={
-              satisfied[16][index] !== 1
-                ? "inline-block bg-black-light1 rounded-full px-2 py-1 text-xs font-semibold text-black-dark2 mr-1 mb-1 hover:scale-125"
-                : // ? "inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-black-dark3 mr-1 mb-1 hover:scale-125"
+            // className={
+            //   satisfied[16][index] !== 1
+            //     ? "inline-block bg-black-light1 rounded-full px-2 py-1 text-xs font-semibold text-black-dark2 mr-1 mb-1 hover:scale-125"
+            //     : // ? "inline-block bg-gray-200 rounded-full px-2 py-1 text-xs font-semibold text-black-dark3 mr-1 mb-1 hover:scale-125"
 
-                  "inline-block bg-green rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
+            //       "inline-block bg-green rounded-full px-2 py-1 text-xs font-semibold text-gray-700 mr-1 mb-1 hover:scale-125"
+            // }
+            className={
+              "inline-block rounded-full px-2 py-1 text-xs font-semibold mr-1 mb-1 hover:scale-125 " +
+              (colorMode
+                ? satisfied[16][index] === 1
+                  ? "bg-green"
+                  : "bg-gray-dark"
+                : satisfied[16][index] === 1
+                  ? "bg-green-pastel"
+                  : "bg-white")
             }
           >
             {course.label}

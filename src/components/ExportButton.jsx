@@ -1,4 +1,5 @@
-import export_icon from "/icons/export.svg";
+import export_dark from "/icons/export-dark.svg";
+import export_light from "/icons/export-light.svg";
 import { jsPDF, AcroFormTextField } from "jspdf";
 import cs_requirements from "../data/CS_requirements.js";
 import ge from "../data/GE.js";
@@ -9,6 +10,8 @@ export default function ExportButton({
   apCredit,
   colorMode,
 }) {
+  const iconSource = colorMode ? export_dark : export_light;
+
   const generatePDF = () => {
     const doc = new jsPDF({ orientation: "landscape" });
     doc.setFontSize(8);
@@ -118,14 +121,21 @@ export default function ExportButton({
 
   return (
     <div className=" py-2 rounded-xl flex items-center" onClick={generatePDF}>
-      <div className="bg-black-dark3 text-white  hover:bg-black-dark1 font-medium rounded-2xl text-xs px-2 py-1 focus:outline-none">
+      <div
+        className={
+          "font-medium rounded-2xl text-xs px-2 py-1 focus:outline-none " +
+          (colorMode
+            ? "bg-black-dark3 hover:bg-black-dark1 text-white"
+            : "bg-gray-100  hover:bg-gray text-black-dark3")
+        }
+      >
         <a
           // href=""
           // target="_blank"
           className="rounded-2xl font-medium text-xs px-0 p-2 focus:outline-none mr-2 flex items-center" // Combined styles for link and flex container
         >
           <img
-            src={export_icon}
+            src={iconSource}
             alt="linkw"
             style={{
               width: "15px",

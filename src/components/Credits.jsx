@@ -18,7 +18,7 @@ export default function Credits({ satisfied, colorMode }) {
           </div>
           <span
             className={
-              "text-sm font-medium" +
+              "text-sm font-medium " +
               (colorMode ? "text-gray-200" : "text-dark")
             }
           >
@@ -33,7 +33,10 @@ export default function Credits({ satisfied, colorMode }) {
           }
         >
           <div
-            className="w-full bg-green h-2.5 rounded-full"
+            className={
+              "transition-all duration-300 w-full rounded-full h-2.5 " +
+              (colorMode ? "bg-green" : "bg-green-pastel")
+            }
             style={{ width: `${Math.min(100, (satisfied[18] / 180) * 100)}%` }}
           ></div>
         </div>
