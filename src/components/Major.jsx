@@ -62,7 +62,7 @@ export default function Major({ satisfied, colorMode }) {
     <div
       className={
         "transition-all duration-300 mb-4 max-w-sm rounded-lg overflow-hidden shadow-md " +
-        (colorMode ? "bg-black-dark3" : "bg-white-dark1")
+        (colorMode ? "bg-black-dark3" : "bg-gray-100")
       }
     >
       <div className="px-6 py-4">

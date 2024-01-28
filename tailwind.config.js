@@ -34,7 +34,7 @@ export default {
         pastel: '#F7D9C4',
       },
       white: {
-        DEFAULT: "#FFFFFF",
+        DEFAULT: "#FFFBFE",
         dark1: "#DDDDDD", // temporary
         dark2: "#BBBBBB",
       },
