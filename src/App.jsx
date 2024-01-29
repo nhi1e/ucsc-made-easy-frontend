@@ -110,6 +110,7 @@ export default function App() {
               setSatisfied={setSatisfied}
               apCredit={apCredit}
               setAPCredit={setAPCredit}
+              colorMode={colorMode}
             />
           </div>
         </div>

@@ -61,6 +61,7 @@ export default function Navbar({
   client_id,
   courses,
   setSatisfied,
+  colorMode,
 }) {
   const { showToast } = useToast();
 

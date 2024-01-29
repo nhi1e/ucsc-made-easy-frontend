@@ -12,6 +12,7 @@ export default function CourseBox({
   satisfied,
   setSatisfied,
   apCredit,
+  colorMode,
 }) {
   const { showToast } = useToast();
 

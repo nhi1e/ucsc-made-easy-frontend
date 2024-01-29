@@ -4,7 +4,6 @@ import expand_icon from "/icons/expand.svg";
 import collapse_icon from "/icons/collapse.svg";
 
 export default function Quarters({
-  colorMode,
   year_index,
   courses,
   setCourses,
@@ -12,6 +11,7 @@ export default function Quarters({
   satisfied,
   setSatisfied,
   apCredit,
+  colorMode,
 }) {
   const year_names = ["YEAR 1", "YEAR 2", "YEAR 3", "YEAR 4"];
   const quarter_indices = [0, 1, 2, 3];
@@ -57,6 +57,7 @@ export default function Quarters({
                 satisfied={satisfied}
                 setSatisfied={setSatisfied}
                 apCredit={apCredit}
+                colorMode={colorMode}
               />
             </div>
           ))}

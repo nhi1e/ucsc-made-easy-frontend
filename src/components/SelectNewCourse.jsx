@@ -47,6 +47,7 @@ export default function SelectNewCourse({
   satisfied,
   setSatisfied,
   apCredit,
+  colorMode,
 }) {
   const { showToast } = useToast();
 

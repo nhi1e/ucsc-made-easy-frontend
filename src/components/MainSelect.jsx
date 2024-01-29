@@ -8,6 +8,7 @@ export default function MainSelect({
   satisfied,
   setSatisfied,
   apCredit,
+  colorMode,
 }) {
   return (
     <div>
@@ -18,6 +19,7 @@ export default function MainSelect({
         satisfied={satisfied}
         setSatisfied={setSatisfied}
         apCredit={apCredit}
+        colorMode={colorMode}
       />
     </div>
   );

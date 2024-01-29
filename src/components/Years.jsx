@@ -7,6 +7,7 @@ export default function Years({
   satisfied,
   setSatisfied,
   apCredit,
+  colorMode,
 }) {
   const year_indices = [0, 1, 2, 3];
 
@@ -23,6 +24,7 @@ export default function Years({
               satisfied={satisfied}
               setSatisfied={setSatisfied}
               apCredit={apCredit}
+              colorMode={colorMode}
             />
           </div>
         );

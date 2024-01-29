@@ -9,6 +9,7 @@ export default function CourseSelect({
   satisfied,
   setSatisfied,
   apCredit,
+  colorMode,
 }) {
   const quarter_names = ["Fall", "Winter", "Spring", "Summer"];
   const titleColors = [
@@ -35,6 +36,7 @@ export default function CourseSelect({
           satisfied={satisfied}
           setSatisfied={setSatisfied}
           apCredit={apCredit}
+          colorMode={colorMode}
         />
       ))}
       {/* I want below to change the list I have in this current scope */}
@@ -46,6 +48,7 @@ export default function CourseSelect({
         satisfied={satisfied}
         setSatisfied={setSatisfied}
         apCredit={apCredit}
+        colorMode={colorMode}
       />
     </div>
   );

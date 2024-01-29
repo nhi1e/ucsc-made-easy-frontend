@@ -12,6 +12,7 @@ export default function Left({
   setSatisfied,
   apCredit,
   setAPCredit,
+  colorMode,
 }) {
   const { toastMessage, hideToast } = useToast();
 
@@ -32,6 +33,7 @@ export default function Left({
         client_id={client_id}
         courses={courses}
         setSatisfied={setSatisfied}
+        colorMode={colorMode}
       />
       <MainSelect
         courses={courses}
@@ -40,6 +42,7 @@ export default function Left({
         satisfied={satisfied}
         setSatisfied={setSatisfied}
         apCredit={apCredit}
+        colorMode={colorMode}
       />
       <ToastContainer
         position="bottom-center"
