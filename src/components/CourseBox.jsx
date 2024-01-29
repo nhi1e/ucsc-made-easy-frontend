@@ -70,8 +70,14 @@ export default function CourseBox({
     <div
       // replace " border-4" with our color
       className={
-        "justify-between rounded-lg  p-1 m-1 flex bg-black-light2 text-gray-400 hover:bg-black-light1 hover:cursor-pointer transition-colors " +
-        (satisfied[quarter_index][num] === 1 ? "border-2 border-red" : "")
+        "justify-between rounded-lg p-1 m-1 flex " +
+        (colorMode
+          ? satisfied[quarter_index][num] === 1
+            ? "border-2 border-red bg-black-light2 text-gray-400 hover:bg-black-light1"
+            : "bg-black-light2 text-gray-400 hover:bg-black-light1"
+          : satisfied[quarter_index][num] === 1
+            ? "border-2 border-red bg-blue-dark2 text-gray-200 hover:bg-black-light1"
+            : "bg-blue-dark2 text-gray-200 hover:bg-black-light1")
       }
       onClick={fetchCourseInfo}
     >

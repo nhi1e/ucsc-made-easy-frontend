@@ -32,7 +32,12 @@ export default function Quarters({
         onClick={handleCollapse}
         className="mt-0.8 divide flex hover:bg-black-light2 transition-colors duration-200"
       >
-        <span className="mr-auto text-xl mb-1 text-gray-dark">
+        <span
+          className={
+            "transition-all duration-300 mr-auto text-xl mb-1 " +
+            (colorMode ? "text-gray-dark" : "tex-black-light2")
+          }
+        >
           {year_names[year_index]}
         </span>
         <img src={collapse ? expand_icon : collapse_icon} className="w-5 h-5" />
@@ -44,8 +49,8 @@ export default function Quarters({
               // className={`px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg ${boxBorderColors[q]} ${boxColors[q]}`}
               // className="px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg bg-black-dark3 "
               className={
-                "transition-all duration-300px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg " +
-                (colorMode ? "bg-black-dark3" : "bg-black-dark3")
+                "transition-all duration-300 px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg " +
+                (colorMode ? "bg-black-dark3" : "bg-blue-lighter")
               }
               key={q}
             >

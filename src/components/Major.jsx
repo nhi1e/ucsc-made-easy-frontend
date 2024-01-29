@@ -8,8 +8,8 @@ export default function Major({ satisfied, colorMode }) {
     control: (provided, state) => ({
       ...provided,
       // background: "#C8CCD5",
-      background: colorMode ? "#C8CCD5" : "#C6D0E2",
-      borderColor: colorMode ? "#C8CCD5" : "#C6D0E2",
+      background: colorMode ? "#4C5464" : "#C6D0E2",
+      borderColor: colorMode ? "#4C5464" : "#C6D0E2",
       borderRadius: "20px",
       maxHeight: "10px",
       height: "10px",

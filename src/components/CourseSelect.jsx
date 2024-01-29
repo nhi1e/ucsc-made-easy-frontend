@@ -12,12 +12,20 @@ export default function CourseSelect({
   colorMode,
 }) {
   const quarter_names = ["Fall", "Winter", "Spring", "Summer"];
-  const titleColors = [
-    "text-orange-pastel",
-    "text-blue-pastel",
-    "text-yellow-pastel",
-    "text-green-pastel",
-  ];
+
+  const titleColors = colorMode
+    ? [
+        "text-orange-pastel",
+        "text-blue-pastel",
+        "text-yellow-pastel",
+        "text-green-pastel",
+      ]
+    : [
+        "text-orange-pastel_dark",
+        "text-blue-pastel_dark",
+        "text-yellow-pastel_dark",
+        "text-green-pastel_dark",
+      ];
   return (
     <div className="m-1 ">
       <div className={`m-1 ${titleColors[quarter_index % 4]}`}>

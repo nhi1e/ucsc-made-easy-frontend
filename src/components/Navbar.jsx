@@ -5,56 +5,6 @@ import { useState } from "react";
 import expand_icon from "/icons/expand.svg";
 import collapse_icon from "/icons/collapse.svg";
 import { useToast } from "./ToastContext";
-
-const customSelect = {
-  control: (provided, state) => ({
-    ...provided,
-    background: "#101725",
-    borderColor: "#101725",
-    borderRadius: "7gipx",
-    boxShadow: state.isFocused ? null : null,
-  }),
-
-  valueContainer: (provided, state) => ({
-    ...provided,
-    height: "30px",
-    padding: "0 6px",
-    fontSize: "14px",
-    // fontWeight: "bold",
-  }),
-
-  multiValue: (provided) => ({
-    ...provided,
-    borderRadius: "14px", // Set your desired border radius for chips
-    backgroundColor: "#2D374C",
-  }),
-  multiValueLabel: (provided) => ({
-    ...provided,
-    color: "#f2f2f2", //whats shown in the box
-  }),
-  multiValueRemove: (provided) => ({
-    ...provided,
-    color: "#ffffff", //FIXME
-  }),
-
-  input: (provided, state) => ({
-    ...provided,
-    margin: "0px",
-    color: "#f2f2f2", //when typing
-  }),
-  indicatorSeparator: (state) => ({
-    display: "none",
-  }),
-  indicatorsContainer: (provided, state) => ({
-    ...provided,
-    height: "30px",
-  }),
-  menuPortal: (base) => ({
-    ...base,
-    fontSize: "3px",
-  }),
-};
-
 export default function Navbar({
   apCredit,
   setAPCredit,
@@ -63,6 +13,55 @@ export default function Navbar({
   setSatisfied,
   colorMode,
 }) {
+  const customSelect = {
+    control: (provided, state) => ({
+      ...provided,
+      background: "#101725",
+      borderColor: "#101725",
+      borderRadius: "7gipx",
+      boxShadow: state.isFocused ? null : null,
+    }),
+
+    valueContainer: (provided, state) => ({
+      ...provided,
+      height: "30px",
+      padding: "0 6px",
+      fontSize: "14px",
+      // fontWeight: "bold",
+    }),
+
+    multiValue: (provided) => ({
+      ...provided,
+      borderRadius: "14px", // Set your desired border radius for chips
+      backgroundColor: "#2D374C",
+    }),
+    multiValueLabel: (provided) => ({
+      ...provided,
+      color: "#f2f2f2", //whats shown in the box
+    }),
+    multiValueRemove: (provided) => ({
+      ...provided,
+      color: "#ffffff", //FIXME
+    }),
+
+    input: (provided, state) => ({
+      ...provided,
+      margin: "0px",
+      color: "#f2f2f2", //when typing
+    }),
+    indicatorSeparator: (state) => ({
+      display: "none",
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      height: "30px",
+    }),
+    menuPortal: (base) => ({
+      ...base,
+      fontSize: "3px",
+    }),
+  };
+
   const { showToast } = useToast();
 
   const animatedComponents = makeAnimated();
@@ -151,7 +150,14 @@ export default function Navbar({
         onClick={handleCollapse}
         className="mt-2 divide flex hover:bg-black-light2 transition-colors duration-200"
       >
-        <span className="mr-auto text-gray-dark text-xl mb-1">PRE-COLLEGE</span>
+        <span
+          className={
+            "transition-all duration-300 mr-auto text-xl mb-1 " +
+            (colorMode ? "text-gray-dark" : "tex-black-light2")
+          }
+        >
+          PRE-COLLEGE
+        </span>
         <img src={collapse ? expand_icon : collapse_icon} className="w-5 h-5" />
       </div>
       <div>

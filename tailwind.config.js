@@ -20,15 +20,19 @@ export default {
         light: '#C8D2E3',
         lighter:'#D9E0EC',
         dark:'#C6D0E2',
+        dark2:'#A4B4D1',
+        pastel_dark:'#8298C0',
       },
       yellow: {
         DEFAULT: '#F7DB6A',
         pastel:'#FAEDCB',
+        pastel_dark:'#EEBD3E',
       },
       green: {
         DEFAULT: '#bbf7d0',
         pastel:'#D2E3C8',
-        light:'#B6D2A6'
+        light:'#B6D2A6',
+        pastel_dark:'#9AC184'
       },
       red: {
         DEFAULT: '#EF6262',
@@ -37,6 +41,7 @@ export default {
       },
       orange: {
         pastel: '#F7D9C4',
+        pastel_dark:'#EB9F6A',
       },
       white: {
         DEFAULT: "#FFFBFE",

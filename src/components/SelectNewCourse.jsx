@@ -2,43 +2,6 @@ import Select, { createFilter } from "react-select";
 import CustomOption from "./CustomOption";
 import real_courses from "../data/real_course_list";
 import { useToast } from "./ToastContext";
-
-const customSelect = {
-  control: (provided, state) => ({
-    ...provided,
-    background: "#101725",
-    borderColor: "#101725",
-    borderRadius: "20px",
-    maxHeight: "30px",
-    height: "30px",
-    boxShadow: state.isFocused ? null : null,
-  }),
-
-  valueContainer: (provided, state) => ({
-    ...provided,
-    height: "30px",
-    padding: "0 6px",
-    fontSize: "14px",
-  }),
-
-  input: (provided, state) => ({
-    ...provided,
-    margin: "0px",
-    color: "#f2f2f2", //when typing
-  }),
-  indicatorSeparator: (state) => ({
-    display: "none",
-  }),
-  indicatorsContainer: (provided, state) => ({
-    ...provided,
-    height: "30px",
-  }),
-  menuPortal: (base) => ({
-    ...base,
-    fontSize: "3px",
-  }),
-};
-
 export default function SelectNewCourse({
   quarter_index,
   courses,
@@ -49,6 +12,42 @@ export default function SelectNewCourse({
   apCredit,
   colorMode,
 }) {
+  const customSelect = {
+    control: (provided, state) => ({
+      ...provided,
+      background: colorMode ? "#101725" : "#D9E0EC",
+      borderColor: colorMode ? "#101725" : "#D9E0EC",
+      borderRadius: "20px",
+      maxHeight: "30px",
+      height: "30px",
+      boxShadow: state.isFocused ? null : null,
+    }),
+
+    valueContainer: (provided, state) => ({
+      ...provided,
+      height: "30px",
+      padding: "0 6px",
+      fontSize: "14px",
+    }),
+
+    input: (provided, state) => ({
+      ...provided,
+      margin: "0px",
+      color: "#f2f2f2", //when typing
+    }),
+    indicatorSeparator: (state) => ({
+      display: "none",
+    }),
+    indicatorsContainer: (provided, state) => ({
+      ...provided,
+      height: "30px",
+    }),
+    menuPortal: (base) => ({
+      ...base,
+      fontSize: "3px",
+    }),
+  };
+
   const { showToast } = useToast();
 
   const handleChange = (selectedOption) => {
