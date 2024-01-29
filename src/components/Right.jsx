@@ -17,9 +17,14 @@ export default function Right({
     <div className="flex-grow flex flex-col justify-between overflow-y-scroll select-none">
       <div>
         <h1 className="text-3xl font-bold mt-4 pb-4 ml-6 flex-shrink-0">
-          <span className="text-blue">u</span>
+          {/* <span className="text-blue">u</span>
           <span className="text-yellow">cs</span>
-          <span className="text-blue">c, made easy</span>
+          <span className="text-blue">c, made easy</span> */}
+          <span className={colorMode ? "text-blue" : "text-blue"}>u</span>
+          <span className="text-yellow">cs</span>
+          <span className={colorMode ? "text-blue" : "text-blue"}>
+            c, made easy
+          </span>
         </h1>
         <Info satisfied={satisfied} colorMode={colorMode} />
         <Major satisfied={satisfied} colorMode={colorMode} />

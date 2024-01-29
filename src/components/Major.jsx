@@ -7,8 +7,9 @@ export default function Major({ satisfied, colorMode }) {
   const customSelect = {
     control: (provided, state) => ({
       ...provided,
-      background: "#e5e7eb",
-      borderColor: "#e5e7eb",
+      // background: "#C8CCD5",
+      background: colorMode ? "#C8CCD5" : "#C6D0E2",
+      borderColor: colorMode ? "#C8CCD5" : "#C6D0E2",
       borderRadius: "20px",
       maxHeight: "10px",
       height: "10px",
@@ -62,7 +63,7 @@ export default function Major({ satisfied, colorMode }) {
     <div
       className={
         "transition-all duration-300 mb-4 max-w-sm rounded-lg overflow-hidden shadow-md " +
-        (colorMode ? "bg-black-dark3" : "bg-gray-100")
+        (colorMode ? "bg-black-dark3" : "bg-blue-lighter")
       }
     >
       <div className="px-6 py-4">
@@ -114,8 +115,8 @@ export default function Major({ satisfied, colorMode }) {
                   ? "bg-green"
                   : "bg-gray-dark"
                 : satisfied[16][index] === 1
-                  ? "bg-green-pastel"
-                  : "bg-white")
+                  ? "bg-green-light"
+                  : "bg-blue-dark")
             }
           >
             {course.label}

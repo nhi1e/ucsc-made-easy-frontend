@@ -4,6 +4,7 @@ import expand_icon from "/icons/expand.svg";
 import collapse_icon from "/icons/collapse.svg";
 
 export default function Quarters({
+  colorMode,
   year_index,
   courses,
   setCourses,
@@ -41,7 +42,11 @@ export default function Quarters({
           quarter_indices.map((q) => (
             <div
               // className={`px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg ${boxBorderColors[q]} ${boxColors[q]}`}
-              className="px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg bg-black-dark3 "
+              // className="px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg bg-black-dark3 "
+              className={
+                "transition-all duration-300px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg " +
+                (colorMode ? "bg-black-dark3" : "bg-black-dark3")
+              }
               key={q}
             >
               <CourseSelect

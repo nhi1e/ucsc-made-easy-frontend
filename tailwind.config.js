@@ -17,6 +17,9 @@ export default {
       blue: {
         DEFAULT:'#3b82f6',
         pastel:'#778DA9',
+        light: '#C8D2E3',
+        lighter:'#D9E0EC',
+        dark:'#C6D0E2',
       },
       yellow: {
         DEFAULT: '#F7DB6A',
@@ -25,10 +28,12 @@ export default {
       green: {
         DEFAULT: '#bbf7d0',
         pastel:'#D2E3C8',
+        light:'#B6D2A6'
       },
       red: {
         DEFAULT: '#EF6262',
         pastel:'#F2C6DE',
+        light:'#E3C8D2'
       },
       orange: {
         pastel: '#F7D9C4',

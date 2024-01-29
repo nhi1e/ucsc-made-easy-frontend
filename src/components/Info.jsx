@@ -6,7 +6,7 @@ export default function Info({ satisfied, colorMode }) {
     <div
       className={
         "transition-all duration-300 mb-4 max-w-sm rounded-lg overflow-hidden shadow-md " +
-        (colorMode ? "bg-black-dark3" : "bg-gray-100")
+        (colorMode ? "bg-black-dark3" : "bg-blue-lighter")
       }
     >
       <div className="px-6 py-4">

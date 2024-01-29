@@ -42,7 +42,7 @@ export default function NoteButton({ colorMode }) {
             "font-medium rounded-2xl text-xs px-2 py-1 focus:outline-none " +
             (colorMode
               ? "bg-black-dark3 hover:bg-black-dark1 text-white"
-              : "bg-gray-100  hover:bg-gray text-black-dark3")
+              : "bg-blue-lighter  hover:bg-gray text-black-dark3")
           }
         >
           <a
