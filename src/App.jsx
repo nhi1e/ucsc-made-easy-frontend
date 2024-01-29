@@ -1,6 +1,6 @@
 import Right from "./components/Right";
 import Left from "./components/Left";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ToastProvider } from "./components/ToastContext";
 
@@ -51,21 +51,6 @@ if (client_id === null) {
   if (typeof Storage !== "undefined") {
     localStorage.setItem("client_id", client_id);
   }
-} else {
-  const requestOptions = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      client_id: client_id,
-    }),
-  };
-  await fetch("http://127.0.0.1:5000/", requestOptions)
-    .then((response) => response.json())
-    .then((data) => {
-      courses_format = data.schedule;
-      satisfied_format = data.prereq;
-      ap_format = data.ap_courses;
-    });
 }
 
 export default function App() {
@@ -74,6 +59,28 @@ export default function App() {
   const [apCredit, setAPCredit] = useState(ap_format);
   const [colorMode, setColorMode] = useState(true); // true is dark, false is light
   // see below in the first div how to render different styles depending on the mode
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const dataFetch = async () => {
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          client_id: client_id,
+        }),
+      };
+
+      fetch("http://127.0.0.1:5000/", requestOptions)
+        .then((response) => response.json())
+        .then((data) => {
+          setCourses(data.schedule);
+          setSatisfied(data.prereq);
+          setAPCredit(data.ap_courses);
+        });
+    };
+    dataFetch();
+  }, []);
 
   return (
     <ToastProvider>
