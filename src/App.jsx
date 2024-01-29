@@ -71,44 +71,49 @@ export default function App() {
         }),
       };
 
-      fetch("http://127.0.0.1:5000/", requestOptions)
+      await fetch("http://127.0.0.1:5000/", requestOptions)
         .then((response) => response.json())
         .then((data) => {
           setCourses(data.schedule);
           setSatisfied(data.prereq);
           setAPCredit(data.ap_courses);
+          setLoading(false);
         });
     };
     dataFetch();
   }, []);
 
-  return (
-    <ToastProvider>
-      <div
-        className={
-          "transition-all duration-300 w-full min-h-screen text-white select-none " +
-          (colorMode ? "bg-black-dark2" : "bg-white")
-        }
-      >
-        <div className="flex">
-          <Right
-            satisfied={satisfied}
-            courses={courses}
-            apCredit={apCredit}
-            colorMode={colorMode}
-            setColorMode={setColorMode}
-          />
-          <Left
-            courses={courses}
-            setCourses={setCourses}
-            client_id={client_id}
-            satisfied={satisfied}
-            setSatisfied={setSatisfied}
-            apCredit={apCredit}
-            setAPCredit={setAPCredit}
-          />
+  if (loading) {
+    return <></>; // could add some cute loading slug here
+  } else {
+    return (
+      <ToastProvider>
+        <div
+          className={
+            "transition-all duration-300 w-full min-h-screen text-white select-none " +
+            (colorMode ? "bg-black-dark2" : "bg-white")
+          }
+        >
+          <div className="flex">
+            <Right
+              satisfied={satisfied}
+              courses={courses}
+              apCredit={apCredit}
+              colorMode={colorMode}
+              setColorMode={setColorMode}
+            />
+            <Left
+              courses={courses}
+              setCourses={setCourses}
+              client_id={client_id}
+              satisfied={satisfied}
+              setSatisfied={setSatisfied}
+              apCredit={apCredit}
+              setAPCredit={setAPCredit}
+            />
+          </div>
         </div>
-      </div>
-    </ToastProvider>
-  );
+      </ToastProvider>
+    );
+  }
 }
