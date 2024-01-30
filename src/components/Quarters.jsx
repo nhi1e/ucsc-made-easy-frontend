@@ -35,7 +35,7 @@ export default function Quarters({
         <span
           className={
             "transition-all duration-300 mr-auto text-xl mb-1 " +
-            (colorMode ? "text-gray-dark" : "tex-black-light2")
+            (colorMode ? "text-gray-dark" : "text-black-light2")
           }
         >
           {year_names[year_index]}
@@ -50,7 +50,7 @@ export default function Quarters({
               // className="px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg bg-black-dark3 "
               className={
                 "transition-all duration-300 px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg " +
-                (colorMode ? "bg-black-dark3" : "bg-blue-lighter")
+                (colorMode ? "bg-black-dark3" : "bg-white-dark1")
               }
               key={q}
             >

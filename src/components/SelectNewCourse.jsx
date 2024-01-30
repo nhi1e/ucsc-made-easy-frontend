@@ -15,8 +15,8 @@ export default function SelectNewCourse({
   const customSelect = {
     control: (provided, state) => ({
       ...provided,
-      background: colorMode ? "#101725" : "#D9E0EC",
-      borderColor: colorMode ? "#101725" : "#D9E0EC",
+      background: colorMode ? "#101725" : "#E7E8E7",
+      borderColor: colorMode ? "#101725" : "#E7E8E7",
       borderRadius: "20px",
       maxHeight: "30px",
       height: "30px",

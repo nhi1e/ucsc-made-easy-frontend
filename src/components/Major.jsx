@@ -8,8 +8,8 @@ export default function Major({ satisfied, colorMode }) {
     control: (provided, state) => ({
       ...provided,
       // background: "#C8CCD5",
-      background: colorMode ? "#4C5464" : "#C6D0E2",
-      borderColor: colorMode ? "#4C5464" : "#C6D0E2",
+      background: colorMode ? "#4C5464" : "#C2BFBF",
+      borderColor: colorMode ? "#4C5464" : "#C2BFBF",
       borderRadius: "20px",
       maxHeight: "10px",
       height: "10px",
@@ -63,7 +63,7 @@ export default function Major({ satisfied, colorMode }) {
     <div
       className={
         "transition-all duration-300 mb-4 max-w-sm rounded-lg overflow-hidden shadow-md " +
-        (colorMode ? "bg-black-dark3" : "bg-blue-lighter")
+        (colorMode ? "bg-black-dark3" : "bg-white-dark1")
       }
     >
       <div className="px-6 py-4">
@@ -116,7 +116,7 @@ export default function Major({ satisfied, colorMode }) {
                   : "bg-gray-dark"
                 : satisfied[16][index] === 1
                   ? "bg-green-light"
-                  : "bg-blue-dark")
+                  : "bg-white-dark2")
             }
           >
             {course.label}

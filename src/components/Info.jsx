@@ -6,7 +6,7 @@ export default function Info({ satisfied, colorMode }) {
     <div
       className={
         "transition-all duration-300 mb-4 max-w-sm rounded-lg overflow-hidden shadow-md " +
-        (colorMode ? "bg-black-dark3" : "bg-blue-lighter")
+        (colorMode ? "bg-black-dark3" : "bg-white-dark1")
       }
     >
       <div className="px-6 py-4">
@@ -34,7 +34,7 @@ export default function Info({ satisfied, colorMode }) {
               "transition-all duration-300 font-medium rounded-xl text-xs px-2 py-1 focus:outline-none " +
               (colorMode
                 ? "bg-black-light1 hover:bg-black-light2"
-                : "bg-gray hover:bg-gray-dark")
+                : "bg-white-dark3 hover:bg-white-dark2")
             }
           >
             <a

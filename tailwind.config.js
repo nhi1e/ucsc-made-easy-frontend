@@ -32,7 +32,7 @@ export default {
         DEFAULT: '#bbf7d0',
         pastel:'#D2E3C8',
         light:'#B6D2A6',
-        pastel_dark:'#9AC184'
+        pastel_dark:'#91B946'
       },
       red: {
         DEFAULT: '#EF6262',
@@ -44,9 +44,11 @@ export default {
         pastel_dark:'#EB9F6A',
       },
       white: {
-        DEFAULT: "#FFFBFE",
-        dark1: "#DDDDDD", // temporary
-        dark2: "#BBBBBB",
+        DEFAULT: "#F6F6F5",
+        dark1: "#E7E8E7", 
+        dark2: "#DBD9D9",
+        dark3: "#C2BFBF",
+        dark4:"#A9A5A5",
       },
       black: {
         DEFAULT: "#000000",

@@ -3,7 +3,7 @@ export default function Credits({ satisfied, colorMode }) {
     <div
       className={
         "transition-all duration-300 mb-4 max-w-sm rounded-lg overflow-hidden shadow-md " +
-        (colorMode ? "bg-black-dark3" : "bg-blue-lighter")
+        (colorMode ? "bg-black-dark3" : "bg-white-dark1")
       }
     >
       <div className="px-6 py-4 ">
@@ -29,13 +29,13 @@ export default function Credits({ satisfied, colorMode }) {
         <div
           className={
             "transition-all duration-300 w-full rounded-full h-2.5 " +
-            (colorMode ? "bg-black-light1" : "bg-blue-dark")
+            (colorMode ? "bg-black-light1" : "bg-white-dark3")
           }
         >
           <div
             className={
               "transition-all duration-300 w-full rounded-full h-2.5 " +
-              (colorMode ? "bg-green" : "bg-green-light")
+              (colorMode ? "bg-green" : "bg-green-pastel_dark")
             }
             style={{ width: `${Math.min(100, (satisfied[18] / 180) * 100)}%` }}
           ></div>

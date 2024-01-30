@@ -5,7 +5,7 @@ export default function GE({ satisfied, colorMode }) {
     <div
       className={
         "transition-all duration-300 mb-4 max-w-sm rounded-lg overflow-hidden shadow-md " +
-        (colorMode ? "bg-black-dark3" : "bg-blue-lighter")
+        (colorMode ? "bg-black-dark3" : "bg-white-dark1")
       }
     >
       <div className="px-6 py-4">
@@ -29,8 +29,8 @@ export default function GE({ satisfied, colorMode }) {
                   ? "bg-green"
                   : "bg-gray-dark"
                 : satisfied[17][index] === 1
-                  ? "bg-green-light"
-                  : "bg-blue-dark")
+                  ? "bg-green-pastel_dark"
+                  : "bg-white-dark2")
             }
             // className={
             //   "inline-block rounded-full px-2 py-1 text-xs font-semibold mr-1 mb-1 hover:scale-125 " +

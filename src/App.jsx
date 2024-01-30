@@ -91,7 +91,7 @@ export default function App() {
         <div
           className={
             "transition-all duration-300 w-full min-h-screen text-white select-none " +
-            (colorMode ? "bg-black-dark2" : "bg-blue-light")
+            (colorMode ? "bg-black-dark2" : "bg-white")
           }
         >
           <div className="flex">
