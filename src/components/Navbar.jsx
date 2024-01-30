@@ -18,7 +18,7 @@ export default function Navbar({
       ...provided,
       background: "#101725",
       borderColor: "#101725",
-      borderRadius: "7gipx",
+      borderRadius: "7px",
       boxShadow: state.isFocused ? null : null,
     }),
 
