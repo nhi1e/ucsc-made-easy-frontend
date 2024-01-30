@@ -19,7 +19,7 @@ export default function DarkModeButton({ colorMode, setColorMode }) {
           "rounded-2xl text-xs px-2 py-1 focus:outline-none " +
           (colorMode
             ? "bg-black-dark3 hover:bg-black-dark1"
-            : "bg-white-dark1 hover:bg-gray")
+            : "bg-white-dark1 hover:bg-white-dark2 shadow-md")
         }
       >
         <a

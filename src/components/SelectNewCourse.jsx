@@ -33,7 +33,7 @@ export default function SelectNewCourse({
     input: (provided, state) => ({
       ...provided,
       margin: "0px",
-      color: "#f2f2f2", //when typing
+      color: colorMode ? "#f2f2f2" : "#A9A5A5", //when typing
     }),
     indicatorSeparator: (state) => ({
       display: "none",

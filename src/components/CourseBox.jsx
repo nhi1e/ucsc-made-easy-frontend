@@ -76,8 +76,8 @@ export default function CourseBox({
             ? "border-2 border-red bg-black-light2 text-gray-400 hover:bg-black-light1"
             : "bg-black-light2 text-gray-400 hover:bg-black-light1"
           : satisfied[quarter_index][num] === 1
-            ? "border-2 border-red bg-white-dark4 text-gray-200 hover:bg-white-dark3"
-            : "bg-white-dark4 text-gray-200 hover:bg-white-dark3")
+            ? "border-2 border-red bg-white-dark4 text-gray-200 hover:bg-white-dark3 shadow-inner	"
+            : "bg-white-dark4 text-gray-200 hover:bg-white-dark3 shadow-[inset_0_2px_3px_rgba(0,0,0,0.3)]")
       }
       onClick={fetchCourseInfo}
     >

@@ -30,7 +30,10 @@ export default function Quarters({
     <div className="mt-6 mr-9 ml-9 grid grid-cols-1 ">
       <div
         onClick={handleCollapse}
-        className="mt-0.8 divide flex hover:bg-black-light2 transition-colors duration-200"
+        className={
+          "mt-0.8 divide flex hover:bg-black-light2 transition-colors duration-200 " +
+          (colorMode ? "hover:bg-black-light2" : "hover:bg-white-dark1")
+        }
       >
         <span
           className={
@@ -50,7 +53,7 @@ export default function Quarters({
               // className="px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg bg-black-dark3 "
               className={
                 "transition-all duration-300 px-2 py-2 max-w-400 w-60 border-1 mt-1 rounded-lg " +
-                (colorMode ? "bg-black-dark3" : "bg-white-dark1")
+                (colorMode ? "bg-black-dark3" : "bg-white-dark1 shadow-lg")
               }
               key={q}
             >

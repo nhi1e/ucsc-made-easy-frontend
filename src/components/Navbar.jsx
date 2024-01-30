@@ -16,8 +16,8 @@ export default function Navbar({
   const customSelect = {
     control: (provided, state) => ({
       ...provided,
-      background: "#101725",
-      borderColor: "#101725",
+      background: colorMode ? "#101725" : "#E7E8E7",
+      borderColor: colorMode ? "#101725" : "#E7E8E7",
       borderRadius: "7px",
       boxShadow: state.isFocused ? null : null,
     }),
@@ -33,7 +33,7 @@ export default function Navbar({
     multiValue: (provided) => ({
       ...provided,
       borderRadius: "14px", // Set your desired border radius for chips
-      backgroundColor: "#2D374C",
+      backgroundColor: colorMode ? "#2D374C" : "#A9A5A5",
     }),
     multiValueLabel: (provided) => ({
       ...provided,
@@ -47,7 +47,7 @@ export default function Navbar({
     input: (provided, state) => ({
       ...provided,
       margin: "0px",
-      color: "#f2f2f2", //when typing
+      color: colorMode ? "#f2f2f2" : "#A9A5A5", //when typing
     }),
     indicatorSeparator: (state) => ({
       display: "none",
@@ -148,7 +148,10 @@ export default function Navbar({
     <div className="mt-6 mr-9 ml-9 grid grid-cols-1 ">
       <div
         onClick={handleCollapse}
-        className="mt-2 divide flex hover:bg-black-light2 transition-colors duration-200"
+        className={
+          "mt-0.8 divide flex hover:bg-black-light2 transition-colors duration-200 " +
+          (colorMode ? "hover:bg-black-light2" : "hover:bg-white-dark1")
+        }
       >
         <span
           className={

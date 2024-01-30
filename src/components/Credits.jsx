@@ -29,7 +29,9 @@ export default function Credits({ satisfied, colorMode }) {
         <div
           className={
             "transition-all duration-300 w-full rounded-full h-2.5 " +
-            (colorMode ? "bg-black-light1" : "bg-white-dark3")
+            (colorMode
+              ? "bg-black-light1"
+              : "bg-white-dark3 shadow-[inset_0_2px_3px_rgba(0,0,0,0.2)]")
           }
         >
           <div
