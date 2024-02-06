@@ -95,7 +95,10 @@ export default function Navbar({
         }),
       };
 
-      fetch("http://127.0.0.1:5000/prereqadd", requestOptions)
+      fetch(
+        "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/prereqadd",
+        requestOptions
+      )
         .then((response) => response.json())
         .then((data) => {
           setSatisfied(data);
@@ -124,7 +127,10 @@ export default function Navbar({
         }),
       };
 
-      fetch("http://127.0.0.1:5000/prereqremove", requestOptions)
+      fetch(
+        "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/prereqremove",
+        requestOptions
+      )
         .then((response) => response.json())
         .then((data) => {
           setSatisfied(data);
