@@ -68,7 +68,10 @@ export default function SelectNewCourse({
       }),
     };
 
-    fetch("http://127.0.0.1:5000/add", requestOptions)
+    fetch(
+      "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev//add",
+      requestOptions
+    )
       .then((response) => response.json())
       .then((data) => {
         setSatisfied(data);

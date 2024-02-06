@@ -36,7 +36,10 @@ export default function CourseBox({
       }),
     };
 
-    fetch("http://127.0.0.1:5000/remove", requestOptions)
+    fetch(
+      "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/remove",
+      requestOptions
+    )
       .then((response) => response.json())
       .then((data) => {
         setSatisfied(data);
@@ -58,7 +61,10 @@ export default function CourseBox({
       }),
     };
 
-    fetch("http://127.0.0.1:5000/getinfo", requestOptions)
+    fetch(
+      "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/getinfo",
+      requestOptions
+    )
       .then((response) => response.json())
       .then((data) => {
         setSatisfied(data);

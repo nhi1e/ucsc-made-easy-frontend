@@ -71,7 +71,10 @@ export default function App() {
         }),
       };
 
-      await fetch("http://127.0.0.1:5000/", requestOptions)
+      await fetch(
+        "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/",
+        requestOptions
+      )
         .then((response) => response.json())
         .then((data) => {
           setCourses(data.schedule);
