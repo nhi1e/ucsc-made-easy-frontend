@@ -1,6 +1,6 @@
 # [UCSC Made Easy](https://ucscmadeeasy.vercel.app/)
 
-[Link to the front end repo](https://github.com/waylonwilliams/ucsc-made-easy-backend)
+[Link to the back end repo](https://github.com/waylonwilliams/ucsc-made-easy-backend)
 
 https://github.com/waylonwilliams/ucsc-made-easy-backend/assets/145303505/8d3b7c52-2688-4d69-af73-1961a857f5dd
 
