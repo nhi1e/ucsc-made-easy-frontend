@@ -36,14 +36,24 @@ export default function CourseBox({
       }),
     };
 
-    fetch(
-      "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/remove",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setSatisfied(data);
-      });
+    if (import.meta.env.PROD) {
+      // production
+      fetch(
+        "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/remove",
+        requestOptions
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setSatisfied(data);
+        });
+    } else {
+      // development
+      fetch("http://127.0.0.1:5000/remove", requestOptions)
+        .then((response) => response.json())
+        .then((data) => {
+          setSatisfied(data);
+        });
+    }
   };
 
   // not sure if this is necessary
@@ -61,14 +71,22 @@ export default function CourseBox({
       }),
     };
 
-    fetch(
-      "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/getinfo",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setSatisfied(data);
-      });
+    if (import.meta.env.PROD) {
+      fetch(
+        "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/getinfo",
+        requestOptions
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setSatisfied(data);
+        });
+    } else {
+      fetch("http://127.0.0.1:5000/getinfo", requestOptions)
+        .then((response) => response.json())
+        .then((data) => {
+          setSatisfied(data);
+        });
+    }
     console.log("Clicked div");
   };
 

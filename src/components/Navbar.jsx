@@ -95,24 +95,42 @@ export default function Navbar({
         }),
       };
 
-      fetch(
-        "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/prereqadd",
-        requestOptions
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setSatisfied(data);
-          for (let i = 0; i < data.length - 4; i++) {
-            if (data[i].includes(1)) {
-              // toast("You have unsatisfied prerequisites", {
-              //   position: "bottom-center",
-              //   autoClose: 5000,
-              // });
-              showToast("You have unsatisfied prerequisites");
-              break;
+      if (import.meta.env.PROD) {
+        fetch(
+          "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/prereqadd",
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setSatisfied(data);
+            for (let i = 0; i < data.length - 4; i++) {
+              if (data[i].includes(1)) {
+                // toast("You have unsatisfied prerequisites", {
+                //   position: "bottom-center",
+                //   autoClose: 5000,
+                // });
+                showToast("You have unsatisfied prerequisites");
+                break;
+              }
             }
-          }
-        });
+          });
+      } else {
+        fetch("http://127.0.0.1:5000/prereqadd", requestOptions)
+          .then((response) => response.json())
+          .then((data) => {
+            setSatisfied(data);
+            for (let i = 0; i < data.length - 4; i++) {
+              if (data[i].includes(1)) {
+                // toast("You have unsatisfied prerequisites", {
+                //   position: "bottom-center",
+                //   autoClose: 5000,
+                // });
+                showToast("You have unsatisfied prerequisites");
+                break;
+              }
+            }
+          });
+      }
     } else {
       // fetch for removed prereq
       const requestOptions = {
@@ -127,24 +145,42 @@ export default function Navbar({
         }),
       };
 
-      fetch(
-        "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/prereqremove",
-        requestOptions
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setSatisfied(data);
-          for (let i = 0; i < data.length - 4; i++) {
-            if (data[i].includes(1)) {
-              // toast("You have unsatisfied prerequisites", {
-              //   position: "bottom-center",
-              //   autoClose: 5000,
-              // });
-              showToast("You have unsatisfied prerequisites");
-              break;
+      if (import.meta.env.PROD) {
+        fetch(
+          "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/prereqremove",
+          requestOptions
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            setSatisfied(data);
+            for (let i = 0; i < data.length - 4; i++) {
+              if (data[i].includes(1)) {
+                // toast("You have unsatisfied prerequisites", {
+                //   position: "bottom-center",
+                //   autoClose: 5000,
+                // });
+                showToast("You have unsatisfied prerequisites");
+                break;
+              }
             }
-          }
-        });
+          });
+      } else {
+        fetch("http://127.0.0.1:5000/prereqremove", requestOptions)
+          .then((response) => response.json())
+          .then((data) => {
+            setSatisfied(data);
+            for (let i = 0; i < data.length - 4; i++) {
+              if (data[i].includes(1)) {
+                // toast("You have unsatisfied prerequisites", {
+                //   position: "bottom-center",
+                //   autoClose: 5000,
+                // });
+                showToast("You have unsatisfied prerequisites");
+                break;
+              }
+            }
+          });
+      }
     }
     setAPCredit(selectedOptions);
   };
