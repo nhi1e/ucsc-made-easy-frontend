@@ -1,4 +1,6 @@
 import link_icon from "/icons/link.svg";
+import PrereqBubble from "./PrereqBubble";
+
 export default function Info({ satisfied, colorMode }) {
   // to conditionally make the link work
 
@@ -26,7 +28,8 @@ export default function Info({ satisfied, colorMode }) {
             (colorMode ? "text-gray-dark" : "text-dark")
           }
         >
-          Prerequisites: {satisfied[19][1]}
+          {/* Prerequisites: {satisfied[19][1]} */}
+          <PrereqBubble satisfied={satisfied} colorMode={colorMode} />
         </p>
         <div className="bg-gray-light justify-end py-2 rounded-2xl flex items-center">
           <div

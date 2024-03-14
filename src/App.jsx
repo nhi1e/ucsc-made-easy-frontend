@@ -42,7 +42,7 @@ var satisfied_format = [
   [], // for major reqs 16
   [], // for ge reqs 17
   0, // for credits 18
-  ["Course Info Here", "Info Here", ""], // for course info 19
+  ["Course Info Here", [], ""], // for course info 19
 ];
 var ap_format = [];
 let client_id = localStorage.getItem("client_id");
