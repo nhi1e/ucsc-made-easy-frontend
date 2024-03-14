@@ -21,6 +21,7 @@ export default function SelectNewCourse({
       maxHeight: "30px",
       height: "30px",
       boxShadow: state.isFocused ? null : null,
+      transition: "all .3s",
     }),
 
     valueContainer: (provided, state) => ({
@@ -28,23 +29,28 @@ export default function SelectNewCourse({
       height: "30px",
       padding: "0 6px",
       fontSize: "14px",
+      transition: "all .3s",
     }),
 
     input: (provided, state) => ({
       ...provided,
       margin: "0px",
       color: colorMode ? "#f2f2f2" : "#A9A5A5", //when typing
+      transition: "all .3s",
     }),
     indicatorSeparator: (state) => ({
       display: "none",
+      transition: "all .3s",
     }),
     indicatorsContainer: (provided, state) => ({
       ...provided,
       height: "30px",
+      transition: "all .3s",
     }),
     menuPortal: (base) => ({
       ...base,
       fontSize: "3px",
+      transition: "all .3s",
     }),
   };
 

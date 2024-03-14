@@ -31,7 +31,7 @@ export default function Right({
         <GE satisfied={satisfied} colorMode={colorMode} />
         <Credits satisfied={satisfied} colorMode={colorMode} />
         <div className="flex pl-5 pt-2 pr-5 space-x-4 justify-center">
-          <NoteButton colorMode={colorMode} />
+          {/* <NoteButton colorMode={colorMode} /> */}
           <ExportButton
             satisfied={satisfied}
             apCredit={apCredit}
