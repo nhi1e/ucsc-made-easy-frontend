@@ -73,10 +73,7 @@ export default function App() {
 
       if (import.meta.env.PROD) {
         // production mode
-        await fetch(
-          "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/",
-          requestOptions
-        )
+        await fetch("https://ume.fly.dev/", requestOptions)
           .then((response) => response.json())
           .then((data) => {
             setCourses(data.schedule);

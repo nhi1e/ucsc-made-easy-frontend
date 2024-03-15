@@ -38,10 +38,7 @@ export default function CourseBox({
 
     if (import.meta.env.PROD) {
       // production
-      fetch(
-        "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/remove",
-        requestOptions
-      )
+      fetch("https://ume.fly.dev/remove", requestOptions)
         .then((response) => response.json())
         .then((data) => {
           setSatisfied(data);
@@ -72,10 +69,7 @@ export default function CourseBox({
     };
 
     if (import.meta.env.PROD) {
-      fetch(
-        "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/getinfo",
-        requestOptions
-      )
+      fetch("https://ume.fly.dev/getinfo", requestOptions)
         .then((response) => response.json())
         .then((data) => {
           setSatisfied(data);

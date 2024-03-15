@@ -75,10 +75,7 @@ export default function SelectNewCourse({
     };
 
     if (import.meta.env.PROD) {
-      fetch(
-        "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev//add",
-        requestOptions
-      )
+      fetch("https://ume.fly.dev/add", requestOptions)
         .then((response) => response.json())
         .then((data) => {
           setSatisfied(data);

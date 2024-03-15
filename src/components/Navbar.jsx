@@ -96,10 +96,7 @@ export default function Navbar({
       };
 
       if (import.meta.env.PROD) {
-        fetch(
-          "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/prereqadd",
-          requestOptions
-        )
+        fetch("https://ume.fly.dev/prereqadd", requestOptions)
           .then((response) => response.json())
           .then((data) => {
             setSatisfied(data);
@@ -146,10 +143,7 @@ export default function Navbar({
       };
 
       if (import.meta.env.PROD) {
-        fetch(
-          "https://ucsc-made-easy-backend-shy-wave-1904.fly.dev/prereqremove",
-          requestOptions
-        )
+        fetch("https://ume.fly.dev/prereqremove", requestOptions)
           .then((response) => response.json())
           .then((data) => {
             setSatisfied(data);
